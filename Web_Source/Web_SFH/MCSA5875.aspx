@@ -67,7 +67,7 @@
                     str += "<option value='" + v + "' " + (v === 'CA' ? sel : '') + ">" + v + "</option>";
                     //str += "<option value='" + v + "' " + ">" + v + "</option>";
                 });
-                $('#selStates1').html(str);
+                $('#selDriverState').html(str);
                 $('#selMedicalState4').html(str);
                 $('#selIssueState4').html(str);
                  $('#selMedicalState5').html(str);
@@ -237,6 +237,9 @@
 
         function Save() {
             var dataForm = $("#frmIndex").serializeFormJSON();
+            ///Page2
+            dataForm["DriverState"] = $("#selStates1 :selected").val();
+            ///EndPage2
             ////End Page 1
             //Page 4
             dataForm["MedicalState4"] = $("#selMedicalState4 :selected").val();
@@ -290,7 +293,7 @@
                         }
                         else {
                             $('textarea[name="' + key + '"]').val(value);
-                            if (key == "IssueState4" || key == "MedicalState4" || key == "MedicalState5" || key == "IssueState5") {
+                            if (key == "IssueState4" || key == "MedicalState4" || key == "MedicalState5" || key == "IssueState5" || key=="DriverState") {
                                 $(`#sel${key} option[value=${value}]`).attr('selected', 'selected');
                             }
                         }
@@ -576,7 +579,7 @@
             Save
         </p>
     </div>
-    <form class="frmIndex" name="frmIndex" method="post" id="frmIndex">
+    <form class="frmIndex" name="frmIndex" method="post" id="frmIndex" runat="server">
               <!-- Page 1-->
     <div class="page" id="page1">            
         <div class="logo">
@@ -639,7 +642,7 @@
                         <span><input id="txtDriverCity" name="DriverCity" type="text" class="txt" style="width:190px;"/></span>
                         <%-- State --%>
                         <span id="lblState" class="state">State/Province:&nbsp;</span>                   
-                        <select id="selStates1" name="DriverState" style="width:160px;" class="txt2">
+                        <select id="selDriverState" style="width:160px;" class="txt2">
                             
                         </select>
                         <%-- Zip code --%>
