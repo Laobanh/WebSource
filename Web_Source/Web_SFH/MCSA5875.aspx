@@ -280,8 +280,11 @@
                         var type = $('input[name="' + key + '"]').attr('type');
                         var checked = obj[key] == "on" ? true : false;
                         var value = obj[key] == "0" ? "" : obj[key];
-                        if (type == 'radio' || type == 'checkbox') {
+                        if (type == 'checkbox') {
                             $('input[name="' + key + '"]').prop('checked', checked);
+                        }
+                        else if (type == 'radio') {
+                            $('input[name="' + key + '"][value="' + obj[key] + '"]').prop('checked', true);
                         }
                         else if (type == "text") {
                             $('input[name="' + key + '"]').val(value);
@@ -796,11 +799,11 @@ no longer required to be maintained by regulatory requirements.** </span>
                 <tr>
                     <td>
                         <span id="lblLastName2" class="lastName">Last Name:</span>
-                        <span><input name="nameLastHead2" id="txtLastName2" type="text" class="txt" style="width:240px;" /></span>
-                        <span id="lblFirstName2" class="firstName">First Name:</span>
-                        <span><input id="txtFirstName2" name="nameFirstHead2" type="text" class="txt" style="width:180px;" /></span>
+                        <span><input name="NameLastHead2" id="txtLastName2" type="text" class="txt" style="width:240px;" /></span>
+                        <span id="lblFirstName2" class="FirstName">First Name:</span>
+                        <span><input id="txtFirstName2" name="NameFirstHead2" type="text" class="txt" style="width:180px;" /></span>
                         <span id="lblDob2" class="dob2">DOB:</span>
-                        <span><input id="txtDOB2" name="dateBirth2" type="text" class="txt" style="width:180px;" /></span>
+                        <span><input id="txtDOB2" name="DateBirth2" type="text" class="txt" style="width:180px;" /></span>
                         <span id="lblExamDate2" class="examDate">Exam Date:</span>
                         <span><input type="text" name="dateForm2" id="examDate" class="txt" style="width:100px;"/></span>
                     </td>
@@ -823,17 +826,17 @@ no longer required to be maintained by regulatory requirements.** </span>
                         <span class="ohc">Other health condition(s) not described above:</span>
                     </td>
                     <td style="float:right;">
-                        <input id="ohc1" type="radio" name="otherButtons" value="1" />
+                        <input id="ohc1" type="radio" name="OtherButtons" value="1" />
                         <label for="ohc1" class="yes">Yes</label>
-                        <input id="ohc2" type="radio" name="otherButtons" value="2" />
+                        <input id="ohc2" type="radio" name="OtherButtons" value="2" />
                         <label for="ohc2" class="no">No</label>
-                        <input id="ohc3" type="radio" name="otherButtons" value="3" />
+                        <input id="ohc3" type="radio" name="OtherButtons" value="3" />
                         <label for="ohc3" class="noSure">No Sure</label>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <textarea id="ohc" name="otherDescribe" rows="5" style="width:1000px;" class="area"></textarea>
+                        <textarea id="ohc" name="OtherDescribe" rows="5" style="width:1000px;" class="area"></textarea>
                     </td>
                 </tr>
 
@@ -852,7 +855,7 @@ no longer required to be maintained by regulatory requirements.** </span>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <textarea id="answer" name="commentDescribe" rows="5" style="width:1000px;" class="area"></textarea>
+                        <textarea id="answer" name="CommentDescribe" rows="5" style="width:1000px;" class="area"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -884,7 +887,7 @@ of fraudulent or intentionally false information may subject me to civil or crim
                         Date
                     </td>
                     <td>
-                        <input type="text" name="signatureDate" class="txt" />
+                        <input type="text" name="SignatureDate" class="txt" />
                     </td>
                 </tr>
             </table>
@@ -912,7 +915,7 @@ driver's safe operation of a commercial motor vehicle (CMV).
                 </tr>
                 <tr>
                     <td>
-                        <textarea rows="5" name="examinerComment" class="area2" style="width:983px;"></textarea>
+                        <textarea rows="5" name="ExaminerComment" class="area2" style="width:983px;"></textarea>
                     </td>
                 </tr>
                 <tr>
