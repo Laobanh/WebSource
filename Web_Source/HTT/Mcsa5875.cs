@@ -379,6 +379,10 @@ physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracS
         public string HorizontalLeftEye3 { get; set; }
         public string BothEyesUncorrected3 { get; set; }
         public string BothEyesCorrected3 { get; set; }
+        public string Distinguish3 { get; set; }
+        public string Monocular3 { get; set; }
+        public string Referred3 { get; set; }
+        public string Document3 { get; set; }
         public string DistinguishYes3 { get; set; }
         public string DistinguishNo3 { get; set; }
         public string MonocularYes3 { get; set; }
@@ -399,7 +403,22 @@ physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracS
         public string Left1000Hz3 { get; set; }    
         public string Left2000Hz3 { get; set; }    
         public string AverageRight3 { get; set; }    
-        public string AverageLeft3 { get; set; }    
+        public string AverageLeft3 { get; set; }
+        public string General3 { get; set; }
+        public string Abdomen3 { get; set; }
+        public string Skin3 { get; set; }
+        public string Hernia3 { get; set; }
+        public string Eyes3 { get; set; }
+        public string Back3 { get; set; }
+        public string Ears3 { get; set; }
+        public string Joint3 { get; set; }
+        public string Mouth3 { get; set; }
+        public string Neuro3 { get; set; }
+        public string Heart3 { get; set; }
+        public string Gait3 { get; set; }
+        public string Chest3 { get; set; }
+        public string Vascular3 { get; set; }
+       
         public string GeneralNormarl3 { get; set; }    
         public string GeneralAbnormarl3 { get; set; }    
         public string AbdomenNormarl3 { get; set; }    
@@ -436,8 +455,8 @@ physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracS
         public string firstname4 { get; set; }
         public string dob4 { get; set; }
         public string examdate4 { get; set; }
-        public string NotStandardsWhy4 { get; set; }
-        public string DoNotMeetStandard4 { get; set; }
+        public string MeetStandard4 { get; set; }
+        public string DriverQualified4 { get; set; }
         public string MeetStandardQualifies4 { get; set; }
         public string MeetStandardButPeriodic4 { get; set; }
         public string MeetStandardButPeriodicWhy4 { get; set; }

@@ -280,19 +280,17 @@
                         var type = $('input[name="' + key + '"]').attr('type');
                         var checked = obj[key] == "on" ? true : false;
                         var value = obj[key] == "0" ? "" : obj[key];
+                        if (type == 'radio') 
+                            $('input[name="' + key + '"][value="' + obj[key] + '"]').prop('checked', true)
                         if (type == 'checkbox') {
                             $('input[name="' + key + '"]').prop('checked', checked);
-                        }
-                        else if (type == 'radio') {
-                            $('input[name="' + key + '"][value="' + obj[key] + '"]').prop('checked', true);
                         }
                         else if (type == "text") {
                             $('input[name="' + key + '"]').val(value);
                         }
                         else {
                             $('textarea[name="' + key + '"]').val(value);
-
-                            if (key == "IssueState4" || key == "MedicalState4") {
+                            if (key == "IssueState4" || key == "MedicalState4" || key == "MedicalState5" || key == "IssueState5") {
                                 $(`#sel${key} option[value=${value}]`).attr('selected', 'selected');
                             }
                         }
@@ -301,7 +299,6 @@
 
                 },
                 error: function (e) {
-                    debugger
                     error.html("Signin Failed.");
                 }
             });
@@ -977,9 +974,9 @@ driver's safe operation of a commercial motor vehicle (CMV).
                                 </td>
                                 <td colspan="5">
                                     <span>Pulse rhythm regular:</span>
-                                    <input type="radio" name="pulseRhythm13" id="pulseRhythm1" />
+                                    <input type="radio" name="pulseRhythm13" id="pulseRhythm1" value="1"/>
                                     <label for="pulseRhythm1">Yes</label>
-                                    <input type="radio" name="pulseRhythm23" id="pulseRhythm2" />
+                                    <input type="radio" name="pulseRhythm13" id="pulseRhythm2" value="2"/>
                                     <label for="pulseRhythm2">No</label>
                                 </td>
                             </tr>                             
@@ -1210,8 +1207,8 @@ least 70° field of vision in horizontal meridian measured in each eye. The use 
                                     Applicant can recognize and distinguish among traffic control signals and devices showing red, green, and amber colors
                                 </td>
                                 <td>
-                                    <span><input type="radio" name="DistinguishYes3" /></span>
-                                    <span><input type="radio" name="DistinguishNo3" /></span>
+                                    <span><input type="radio" name="Distinguish3" value="1"/></span>
+                                    <span><input type="radio" name="Distinguish3" value="2"/></span>
                                 </td>
                             </tr>
                             <tr>
@@ -1219,8 +1216,8 @@ least 70° field of vision in horizontal meridian measured in each eye. The use 
                                     Monocular vision
                                 </td>
                                 <td>
-                                    <span><input type="radio" name="MonocularYes3" /></span>
-                                    <span><input type="radio" name="MonocularNo3" /></span>
+                                    <span><input type="radio" name="Monocular3" value="1" /></span>
+                                    <span><input type="radio" name="Monocular3" value="2"/></span>
                                 </td>
                             </tr>
                             <tr>
@@ -1228,8 +1225,8 @@ least 70° field of vision in horizontal meridian measured in each eye. The use 
                                     Referred to ophthalmologist or optometrist?
                                 </td>
                                 <td>
-                                    <span><input type="radio" name="ReferredYes3" /></span>
-                                    <span><input type="radio" name="ReferredNo3" /></span>
+                                    <span><input type="radio" name="Referred3" value="1"/></span>
+                                    <span><input type="radio" name="Referred3" value="2"/></span>
                                 </td>
                             </tr>
                             <tr>
@@ -1237,8 +1234,8 @@ least 70° field of vision in horizontal meridian measured in each eye. The use 
                                     Received documentation from ophthalmologist or optometrist?
                                 </td>
                                 <td>
-                                    <span><input type="radio" name="DocumentYes3" /></span>
-                                    <span><input type="radio" name="DocumentNo3" /></span>
+                                    <span><input type="radio" name="Document3" value="1"/></span>
+                                    <span><input type="radio" name="Document3" value="2"/></span>
                                 </td>
                             </tr>
                         </table>
@@ -1414,19 +1411,19 @@ result in a more serious illness that might affect driving
                         1. General
                     </td>
                     <td style="width:10%; text-align:center;">
-                       <input type="radio" name="GeneralNormarl3" />
+                       <input type="radio" name="General3" value="1" />
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="GeneralAbnormarl3" />
+                         <input type="radio" name="General3" value="2" />
                     </td>
                     <td style="width:30%">
                         8. Abdomen
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="AbdomenNormarl3" />
+                         <input type="radio" name="Abdomen3" value="1"/>
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="AbdomenAbnormarl3" />
+                         <input type="radio" name="Abdomen3" value="2"/>
                     </td>
                 </tr>                
                <%-- Body 2 --%>
@@ -1435,19 +1432,19 @@ result in a more serious illness that might affect driving
                         2. Skin
                     </td>
                     <td style="width:10%; text-align:center;">
-                       <input type="radio" name="SkinNormal3" />
+                       <input type="radio" name="Skin3" value="1" />
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="SkinAbnormal3" />
+                         <input type="radio" name="Skin3" value="2"/>
                     </td>
                     <td style="width:30%">
                         9. Genito-urinary system including hernias
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="HerniaNormal3" />
+                         <input type="radio" name="Hernia3" value="1" />
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="HerniaAbnormal3" />
+                         <input type="radio" name="Hernia3" value="2"/>
                     </td>
                 </tr>
                 <%-- Body 3 --%>
@@ -1456,19 +1453,19 @@ result in a more serious illness that might affect driving
                         3. Eyes
                     </td>
                     <td style="width:10%; text-align:center;">
-                       <input type="radio" name="EyesNormal3"/>
+                       <input type="radio" name="Eyes3" value="1"/>
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="EyesAbnormal3"/>
+                         <input type="radio" name="Eyes3" value="2"/>
                     </td>
                     <td style="width:30%">
                         10. Back/Spine
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio"  name="BackNormal3"/>
+                         <input type="radio"  name="Back3" value="1"/>
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="BackAbnormal3"/>
+                         <input type="radio" name="Back3" value="2"/>
                     </td>
                 </tr>                
                 <%-- Body 4 --%>
@@ -1477,19 +1474,19 @@ result in a more serious illness that might affect driving
                         4. Ears
                     </td>
                     <td style="width:10%; text-align:center;">
-                       <input type="radio" name="EarsNormal3" />
+                       <input type="radio" name="Ears3" value="1"/>
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="EarsAbnormal3"/>
+                         <input type="radio" name="Ears3" value="2"/>
                     </td>
                     <td style="width:30%">
                         11. Extremities/joints
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="JointNormal3" />
+                         <input type="radio" name="Joint3" value="1"/>
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="JointAbnormal3" />
+                         <input type="radio" name="Joint3" value="2"/>
                     </td>
                 </tr>
                  <%-- Body 5 --%>
@@ -1498,19 +1495,19 @@ result in a more serious illness that might affect driving
                          5. Mouth/throat
                     </td>
                     <td style="width:10%; text-align:center;">
-                       <input type="radio" name="MouthNormal3" />
+                       <input type="radio" name="Mouth3" value="1"/>
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="MouthAbnormal3" />
+                         <input type="radio" name="Mouth3" value="2"/>
                     </td>
                     <td style="width:30%">
                         12. Neurological system including reflexes
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="NeuroNormal3" />
+                         <input type="radio" name="Neuro3" value="1"/>
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="NeuroAbnormal3" />
+                         <input type="radio" name="Neuro3" value="2"/>
                     </td>
                 </tr>
                 <%-- Body 6 --%>
@@ -1519,19 +1516,19 @@ result in a more serious illness that might affect driving
                         6. Cardiovascular
                     </td>
                     <td style="width:10%; text-align:center;">
-                       <input type="radio" name="HeartNormal3" />
+                       <input type="radio" name="Heart3" value="1"/>
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="HeartAbnormal3" />
+                         <input type="radio" name="Heart3" value="2"/>
                     </td>
                     <td style="width:30%">
                         13. Gait
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="GaitNormal3" />
+                         <input type="radio" name="Gait3" value="1"/>
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="GaitAbnormal3" />
+                         <input type="radio" name="Gait3" value="2"/>
                     </td>
                 </tr>                
                 <%-- Body 7 --%>
@@ -1540,19 +1537,19 @@ result in a more serious illness that might affect driving
                        7. Lungs/chest
                     </td>
                     <td style="width:10%; text-align:center;">
-                       <input type="radio" name="ChestNormal3" />
+                       <input type="radio" name="Chest3" value="1" />
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="ChestAbnormal3" />
+                         <input type="radio" name="Chest3" value="2" />
                     </td>
                     <td style="width:30%">
                         14. Vascular system
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="VascularNormal3" />
+                         <input type="radio" name="Vascular3" value="1" />
                     </td>
                     <td style="width:10%; text-align:center;">
-                         <input type="radio" name="VascularAbnormal3" />
+                         <input type="radio" name="Vascular3" value="2" />
                     </td>
                 </tr>
                 <tr>
@@ -1623,7 +1620,7 @@ Enter applicable item number before each comment.
                 </tr>
                 <tr>
                     <td>
-                       <span><input type="radio" name="DoNotMeetStandard4" id="rdoDoNotMeetStandard4" /></span>
+                       <span><input type="radio" name="MeetStandard4" id="rdoDoNotMeetStandard4" value="1" /></span>
                         <span>Does not meet standards </span>
                         <span style="font-size:0.9em; font-style:italic;" >(specify reason):</span>
                         <input type="text" style="width:740px; border:0; border-bottom:solid 1px #808080;" name="NotStandardsWhy4" id="txtNotStandardsWhy" />
@@ -1631,7 +1628,7 @@ Enter applicable item number before each comment.
                 </tr>
                  <tr>
                     <td>
-                       <span><input type="radio" name="MeetStandardQualifies4" id="rdoMeetStandard4"/></span>
+                       <span><input type="radio" name="MeetStandard4" id="rdoMeetStandard4" value="2"/></span>
                         <span>Meets standards in   </span>
                         <span style="font-size:0.9em; font-style:italic; color:blue;" >49 CFR 391.41;</span>
                         <span>qualifies for 2-year certificate</span>                        
@@ -1639,7 +1636,7 @@ Enter applicable item number before each comment.
                 </tr>
                 <tr>
                     <td>
-                       <span><input type="radio" name="MeetStandardButPeriodic4" /></span>
+                       <span><input type="radio" name="MeetStandard4" value="3"/></span>
                         <span>Meets standards, but periodic monitoring required</span>
                         <span style="font-size:0.9em; font-style:italic;" >(specify reason):</span>
                         <input type="text" style="width:605px; border:0; border-bottom:solid 1px #808080;" name="MeetStandardButPeriodicWhy4" id="txtButStandardsWhy" />
@@ -1649,25 +1646,25 @@ Enter applicable item number before each comment.
                     <td style="padding-left:20px;">
                         <span>Driver qualified for: </span>
                         <span>
-                            <input type="radio" name="DriverQualified3m4" />
+                            <input type="radio" name="DriverQualified4" value="1" />
                         </span>
                         <span>
                             3 months
                         </span>
                          <span>
-                            <input type="radio" name="DriverQualified6m4" />
+                            <input type="radio" name="DriverQualified4" value="2"/>
                         </span>
                         <span>
                             6 months
                         </span>
                          <span>
-                            <input type="radio" name="DriverQualified1y4" />
+                            <input type="radio" name="DriverQualified4" value="3"/>
                         </span>
                         <span>
                             1 year
                         </span>
                          <span>
-                            <input type="radio" name="DriverQualifiedOther4" />
+                            <input type="radio" name="DriverQualified4" value="4"/>
                         </span>
                         <span>
                             other
@@ -1913,7 +1910,7 @@ and attest that to the best of my knowledge, I believe it to be true and correct
                 </tr>
                 <tr>
                     <td>
-                       <span><input type="radio"  name="DonotMeetStandards5" /></span>
+                       <span><input type="radio"  name="MeetStandards5" value="1" /></span>
                         <span>Does not meet standards </span>
                         <span style="font-size:0.9em; font-style:italic;" >(specify reason):</span>
                         <input type="text" style="width:740px; border:0; border-bottom:solid 1px #808080;"  name="DonotMeetStandardsWhy" id="DonotMeetStandardsWhy5" />
@@ -1921,7 +1918,7 @@ and attest that to the best of my knowledge, I believe it to be true and correct
                 </tr>
                  <tr>
                     <td>
-                       <span><input type="radio" name="MeetStandards5" /></span>
+                       <span><input type="radio" name="MeetStandards5" value="2" /></span>
                         <span>Meets standards in   </span>
                         <span style="font-size:0.9em; font-style:italic; color:blue;" >49 CFR 391.41;</span>
                         <span>qualifies for 2-year certificate</span>                        
@@ -1929,7 +1926,7 @@ and attest that to the best of my knowledge, I believe it to be true and correct
                 </tr>
                 <tr>
                     <td>
-                       <span><input type="radio" name="MeetStandardsButPeriodic5"  /></span>
+                       <span><input type="radio" name="MeetStandards5" value="3" /></span>
                         <span>Meets standards, but periodic monitoring required</span>
                         <span style="font-size:0.9em; font-style:italic;" >(specify reason):</span>
                         <input type="text" style="width:605px; border:0; border-bottom:solid 1px #808080;" name="MeetStandardsButPeriodicWhy5"  id="txtButStandardsWhy5" />
@@ -1939,25 +1936,25 @@ and attest that to the best of my knowledge, I believe it to be true and correct
                     <td style="padding-left:20px;">
                         <span>Driver qualified for: </span>
                         <span>
-                            <input type="radio" name="DriverQualified3m5" />
+                            <input type="radio" name="DriverQualified3m5" value="1"/>
                         </span>
                         <span>
                             3 months
                         </span>
                          <span>
-                            <input type="radio" name="DriverQualified3m5" />
+                            <input type="radio" name="DriverQualified3m5" value="2"/>
                         </span>
                         <span>
                             6 months
                         </span>
                          <span>
-                            <input type="radio" name="DriverQualified1y5" />
+                            <input type="radio" name="DriverQualified1y5" value="3"/>
                         </span>
                         <span>
                             1 year
                         </span>
                          <span>
-                            <input type="radio" name="DriverQualifiedOther5" />
+                            <input type="radio" name="DriverQualified1y5" value="4"/>
                         </span>
                         <span>
                             other
