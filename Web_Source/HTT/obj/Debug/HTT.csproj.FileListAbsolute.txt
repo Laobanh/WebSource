@@ -98,3 +98,24 @@ C:\Users\phamt\OneDrive\Máy tính\Source1\HTT\obj\Debug\HTT.csproj.CoreCompileI
 C:\Users\phamt\OneDrive\Máy tính\Source1\HTT\obj\Debug\HTT.csproj.CopyComplete
 C:\Users\phamt\OneDrive\Máy tính\Source1\HTT\obj\Debug\HTT.dll
 C:\Users\phamt\OneDrive\Máy tính\Source1\HTT\obj\Debug\HTT.pdb
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\HTT.dll.config
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\HTT.dll
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\HTT.pdb
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\itextsharp.xmlworker.dll
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\System.Buffers.dll
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\System.Memory.dll
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\System.Numerics.Vectors.dll
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\System.Text.Encodings.Web.dll
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\System.Text.Json.dll
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\System.ValueTuple.dll
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\System.Text.Encodings.Web.xml
+D:\Private\WebSource\Web_Source\HTT\bin\Debug\System.Text.Json.xml
+D:\Private\WebSource\Web_Source\HTT\obj\Debug\HTT.csprojAssemblyReference.cache
+D:\Private\WebSource\Web_Source\HTT\obj\Debug\HTT.csproj.CoreCompileInputs.cache
+D:\Private\WebSource\Web_Source\HTT\obj\Debug\HTT.csproj.CopyComplete
+D:\Private\WebSource\Web_Source\HTT\obj\Debug\HTT.dll
+D:\Private\WebSource\Web_Source\HTT\obj\Debug\HTT.pdb

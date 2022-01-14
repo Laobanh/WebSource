@@ -93,3 +93,22 @@ C:\Users\phamt\OneDrive\Máy tính\Source1\Web_SFH\obj\Debug\Web_SFH.csproj.Core
 C:\Users\phamt\OneDrive\Máy tính\Source1\Web_SFH\obj\Debug\Web_SFH.csproj.CopyComplete
 C:\Users\phamt\OneDrive\Máy tính\Source1\Web_SFH\obj\Debug\Web_SFH.dll
 C:\Users\phamt\OneDrive\Máy tính\Source1\Web_SFH\obj\Debug\Web_SFH.pdb
+D:\Private\WebSource\Web_Source\Web_SFH\bin\Web_SFH.dll.config
+D:\Private\WebSource\Web_Source\Web_SFH\bin\Web_SFH.dll
+D:\Private\WebSource\Web_Source\Web_SFH\bin\Web_SFH.pdb
+D:\Private\WebSource\Web_Source\Web_SFH\bin\HTT.dll
+D:\Private\WebSource\Web_Source\Web_SFH\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Private\WebSource\Web_Source\Web_SFH\bin\System.Buffers.dll
+D:\Private\WebSource\Web_Source\Web_SFH\bin\System.Memory.dll
+D:\Private\WebSource\Web_Source\Web_SFH\bin\System.Numerics.Vectors.dll
+D:\Private\WebSource\Web_Source\Web_SFH\bin\System.ValueTuple.dll
+D:\Private\WebSource\Web_Source\Web_SFH\bin\itextsharp.dll
+D:\Private\WebSource\Web_Source\Web_SFH\bin\itextsharp.xmlworker.dll
+D:\Private\WebSource\Web_Source\Web_SFH\bin\BouncyCastle.Crypto.dll
+D:\Private\WebSource\Web_Source\Web_SFH\bin\HTT.pdb
+D:\Private\WebSource\Web_Source\Web_SFH\bin\HTT.dll.config
+D:\Private\WebSource\Web_Source\Web_SFH\obj\Debug\Web_SFH.csprojAssemblyReference.cache
+D:\Private\WebSource\Web_Source\Web_SFH\obj\Debug\Web_SFH.csproj.CoreCompileInputs.cache
+D:\Private\WebSource\Web_Source\Web_SFH\obj\Debug\Web_SFH.csproj.CopyComplete
+D:\Private\WebSource\Web_Source\Web_SFH\obj\Debug\Web_SFH.dll
+D:\Private\WebSource\Web_Source\Web_SFH\obj\Debug\Web_SFH.pdb

@@ -277,16 +277,22 @@
                     console.log(obj);
                     for (var key in obj) {
                         var type = $('input[name="' + key + '"]').attr('type');
-                        if (type == 'radio') {
-                            $('input[name="' + key + '"][value="' + obj[key] +'"]').prop('checked', true);
+                        var checked = obj[key] == "on" ? true : false;
+                        var value = obj[key] == "0" ? "" : obj[key];
+                        if (type == 'radio' || type == 'checkbox') {
+                            $('input[name="' + key + '"]').prop('checked', checked);
                         }
-                        else if (type == undefined) {
-                            $('textarea[name="' + key + '"]').val(obj[key]);
+                        else if (type == "text") {
+                            $('input[name="' + key + '"]').val(value);
                         }
                         else {
-                            $('input[name="' + key + '"]').val(obj[key]);
+                            $('textarea[name="' + key + '"]').val(value);
 
+                            if (key == "IssueState4" || key == "MedicalState4") {
+                                $(`#sel${key} option[value=${value}]`).attr('selected', 'selected');
+                            }
                         }
+                     
                     }
 
                 },
@@ -963,7 +969,7 @@ driver's safe operation of a commercial motor vehicle (CMV).
                                     <span>Pulse rate:</span>
                                 </td>
                                 <td>
-                                    <input class="txt" />
+                                    <input type="text" class="txt" name="PulseRate3" />
                                 </td>
                                 <td colspan="5">
                                     <span>Pulse rhythm regular:</span>
@@ -1935,7 +1941,7 @@ and attest that to the best of my knowledge, I believe it to be true and correct
                             3 months
                         </span>
                          <span>
-                            <input type="radio" name="DriverQualified3m6" />
+                            <input type="radio" name="DriverQualified3m5" />
                         </span>
                         <span>
                             6 months
@@ -2043,7 +2049,7 @@ and attest that to the best of my knowledge, I believe it to be true and correct
                 </tr>
                 <tr>
                     <td style="padding-left:3px;">                        
-                        <input type="checkbox" id="chkMD5" name="Md5"/>
+                        <input type="checkbox" id="chkMD5" name="MD5"/>
                         <span>MD</span>
 
                         <input type="checkbox" id="chkDO5" name="DO5"/>

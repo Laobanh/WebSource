@@ -357,8 +357,9 @@ physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracS
         public string FirstName3 { get; set; }
         public string DOB3 { get; set; }
         public string ExamDate3 { get; set; }
-        public string pulseRhythm1 { get; set; }
-        public string pulseRhythm2 { get; set; }
+        public string pulseRhythm13 { get; set; }
+        public string pulseRhythm23 { get; set; }
+        public string PulseRate3 { get; set; }
         public string Height3 { get; set; }
         public string Feet3 { get; set; }
         public string Weight3 { get; set; }
@@ -436,6 +437,7 @@ physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracS
         public string dob4 { get; set; }
         public string examdate4 { get; set; }
         public string NotStandardsWhy4 { get; set; }
+        public string DoNotMeetStandard4 { get; set; }
         public string MeetStandardQualifies4 { get; set; }
         public string MeetStandardButPeriodic4 { get; set; }
         public string MeetStandardButPeriodicWhy4 { get; set; }
@@ -481,11 +483,17 @@ physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracS
         // endpage4
 
         //page5
-        public string lastname5 { get; set; }
-        public string firstname5 { get; set; }
-        public string dob5 { get; set; }
-        public string examdate5 { get; set; }
+        public string Lastname5 { get; set; }
+        public string Firstname5 { get; set; }
+        public string DOB5 { get; set; }
+        public string DonotMeetStandards5 { get; set; }
+        public string MeetStandards5 { get; set; }
+        public string MeetStandardsButPeriodic5 { get; set; }
+        public string MeetStandardsButPeriodicWhy5 { get; set; }
+        public string DonotMeetStandardsWhy5 { get; set; }
         public string NotStandardsWhy5 { get; set; }
+        public string OtherQualify5 { get; set; }
+        public string MedicalDate5 { get; set; }
         public string MeetStandardQualifies5 { get; set; }
         public string MeetStandardButPeriodic5 { get; set; }
         public string MeetStandardButPeriodicWhy5 { get; set; }
@@ -500,6 +508,7 @@ physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracS
         public string WaiverEnter5 { get; set; }
         public string SpeQualify5 { get; set; }
         public string QualifiedOperation5 { get; set; }
+        public string MedicalEcaminer5 { get; set; }
         public string ExemptQualify5 { get; set; }
         public string DeterPending5 { get; set; }
         public string PendingWhy5 { get; set; }

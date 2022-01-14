@@ -93,8 +93,9 @@ namespace Web_SFH.Handlers
             mcsa.FirstName3 = Lib.get_value_str(request["FirstName3"]);
             mcsa.DOB3 = Lib.get_value_str(request["DOB3"]);
             mcsa.ExamDate3 = Lib.get_value_str(request["ExamDate3"]);
-            mcsa.pulseRhythm1 = Lib.get_value_str(request["pulseRhythm1"]);
-            mcsa.pulseRhythm2 = Lib.get_value_str(request["pulseRhythm2"]);
+            mcsa.pulseRhythm13 = Lib.get_value_str(request["pulseRhythm13"]);
+            mcsa.pulseRhythm23 = Lib.get_value_str(request["pulseRhythm23"]);
+            mcsa.PulseRate3 = Lib.get_value_str(request["PulseRate3"]);
             mcsa.Height3 = Lib.get_value_str(request["Height3"]);
             mcsa.Feet3 = Lib.get_value_str(request["Feet3"]);
             mcsa.Weight3 = Lib.get_value_str(request["Weight3"]);
@@ -172,6 +173,7 @@ namespace Web_SFH.Handlers
             mcsa.dob4 = Lib.get_value_str(request["dob4"]);
             mcsa.examdate4 = Lib.get_value_str(request["examdate4"]);
             mcsa.NotStandardsWhy4 = Lib.get_value_str(request["NotStandardsWhy4"]);
+            mcsa.DoNotMeetStandard4 = Lib.get_value_str(request["DoNotMeetStandard4"]);
             mcsa.MeetStandardQualifies4 = Lib.get_value_str(request["MeetStandardQualifies4"]);
             mcsa.MeetStandardButPeriodic4 = Lib.get_value_str(request["MeetStandardButPeriodic4"]);
             mcsa.MeetStandardButPeriodicWhy4 = Lib.get_value_str(request["MeetStandardButPeriodicWhy4"]);
@@ -215,10 +217,15 @@ namespace Web_SFH.Handlers
             mcsa.CertificateExpiration4 = Lib.get_value_str(request["CertificateExpiration4"]);
             // end page 4
             // page 5
-            mcsa.lastname5 = Lib.get_value_str(request["lastname5"]);
-            mcsa.firstname5 = Lib.get_value_str(request["firstname5"]);
-            mcsa.dob5 = Lib.get_value_str(request["dob5"]);
-            mcsa.examdate5 = Lib.get_value_str(request["examdate5"]);
+            mcsa.Lastname5 = Lib.get_value_str(request["LastName5"]);
+            mcsa.Firstname5 = Lib.get_value_str(request["FirstName5"]);
+            mcsa.DOB5 = Lib.get_value_str(request["DOB5"]);
+            mcsa.ExamDate5 = Lib.get_value_str(request["ExamDate5"]);
+            mcsa.DonotMeetStandards5 = Lib.get_value_str(request["DonotMeetStandards5"]);
+            mcsa.DonotMeetStandardsWhy5 = Lib.get_value_str(request["DonotMeetStandardsWhy5"]);
+            mcsa.MeetStandards5 = Lib.get_value_str(request["MeetStandards5"]);
+            mcsa.MeetStandardsButPeriodic5 = Lib.get_value_str(request["MeetStandardsButPeriodic5"]);
+            mcsa.MeetStandardsButPeriodicWhy5 = Lib.get_value_str(request["MeetStandardsButPeriodicWhy5"]);
             mcsa.NotStandardsWhy5 = Lib.get_value_str(request["NotStandardsWhy5"]);
             mcsa.MeetStandardQualifies5 = Lib.get_value_str(request["MeetStandardQualifies5"]);
             mcsa.MeetStandardButPeriodic5 = Lib.get_value_str(request["MeetStandardButPeriodic5"]);
@@ -228,6 +235,8 @@ namespace Web_SFH.Handlers
             mcsa.DriverQualified1y5 = Lib.get_value_str(request["DriverQualified1y5"]);
             mcsa.DriverQualifiedOther5 = Lib.get_value_str(request["DriverQualifiedOther5"]);
             mcsa.DriverQualifiedOtherWhy5 = Lib.get_value_str(request["DriverQualifiedOtherWhy5"]);
+            mcsa.OtherQualify5 = Lib.get_value_str(request["OtherQualify5"]);
+            mcsa.MedicalDate5 = Lib.get_value_str(request["MedicalDate5"]);
             mcsa.CorrectLenses5 = Lib.get_value_str(request["CorrectLenses5"]);
             mcsa.HearingAid5 = Lib.get_value_str(request["HearingAid5"]);
             mcsa.WaiverQualify5 = Lib.get_value_str(request["WaiverQualify5"]);
@@ -261,6 +270,7 @@ namespace Web_SFH.Handlers
             mcsa.OtherPracSpecify5 = Lib.get_value_str(request["OtherPracSpecify5"]);
             mcsa.NationalRegister5 = Lib.get_value_str(request["NationalRegister5"]);
             mcsa.CertificateExpiration5 = Lib.get_value_str(request["CertificateExpiration5"]);
+            mcsa.MedicalEcaminer5 = Lib.get_value_str(request["MedicalEcaminer5"]);
             // end page 5
             string error = string.Empty;
             var result = new ResultInfo("Fialed", "error", "", 0);
