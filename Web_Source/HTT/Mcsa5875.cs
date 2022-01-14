@@ -171,38 +171,38 @@ physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracS
         public string NameFirstHead2 { get => nameFirstHead2; set => nameFirstHead2 = value; }
         public string DateBirth2 { get => dateBirth2; set => dateBirth2 = value; }
         public string DateForm2 { get => dateForm2; set => dateForm2 = value; }
-        public string HeadButtons { get => headButtons; set => headButtons = value; }
-        public string SeizeButtons { get => seizeButtons; set => seizeButtons = value; }
-        public string EyeButtons { get => eyeButtons; set => eyeButtons = value; }
-        public string EarButtons { get => earButtons; set => earButtons = value; }
-        public string HeartButtons { get => heartButtons; set => heartButtons = value; }
-        public string PaceButtons { get => paceButtons; set => paceButtons = value; }
-        public string HighButtons { get => highButtons; set => highButtons = value; }
-        public string CholesterolButtons { get => cholesterolButtons; set => cholesterolButtons = value; }
-        public string BreathButtons { get => breathButtons; set => breathButtons = value; }
-        public string LungButtons { get => lungButtons; set => lungButtons = value; }
-        public string KidneyButtons { get => kidneyButtons; set => kidneyButtons = value; }
-        public string StomachButtons { get => stomachButtons; set => stomachButtons = value; }
-        public string SugarButtons { get => sugarButtons; set => sugarButtons = value; }
-        public string InsulinButtons { get => insulinButtons; set => insulinButtons = value; }
-        public string MentalButtons { get => mentalButtons; set => mentalButtons = value; }
-        public string FaintButtons { get => faintButtons; set => faintButtons = value; }
-        public string DizzyButtons { get => dizzyButtons; set => dizzyButtons = value; }
-        public string WeightButtons { get => weightButtons; set => weightButtons = value; }
-        public string StrokeButtons { get => strokeButtons; set => strokeButtons = value; }
-        public string UselimitButtons { get => uselimitButtons; set => uselimitButtons = value; }
-        public string NeckbackButtons { get => neckbackButtons; set => neckbackButtons = value; }
-        public string BoneButtons { get => boneButtons; set => boneButtons = value; }
-        public string BloodButtons { get => bloodButtons; set => bloodButtons = value; }
-        public string CancerButtons { get => cancerButtons; set => cancerButtons = value; }
-        public string InfectButtons { get => infectButtons; set => infectButtons = value; }
+        public string r1 { get => headButtons; set => headButtons = value; }
+        public string r2 { get => seizeButtons; set => seizeButtons = value; }
+        public string r3 { get => eyeButtons; set => eyeButtons = value; }
+        public string r4 { get => earButtons; set => earButtons = value; }
+        public string r5 { get => heartButtons; set => heartButtons = value; }
+        public string r6 { get => paceButtons; set => paceButtons = value; }
+        public string r7 { get => highButtons; set => highButtons = value; }
+        public string r8 { get => cholesterolButtons; set => cholesterolButtons = value; }
+        public string r9 { get => breathButtons; set => breathButtons = value; }
+        public string r10 { get => lungButtons; set => lungButtons = value; }
+        public string r11 { get => kidneyButtons; set => kidneyButtons = value; }
+        public string r12 { get => stomachButtons; set => stomachButtons = value; }
+        public string r13 { get => sugarButtons; set => sugarButtons = value; }
+        public string r13b { get => insulinButtons; set => insulinButtons = value; }
+        public string r14 { get => mentalButtons; set => mentalButtons = value; }
+        public string r15 { get => faintButtons; set => faintButtons = value; }
+        public string r16 { get => dizzyButtons; set => dizzyButtons = value; }
+        public string r17 { get => weightButtons; set => weightButtons = value; }
+        public string r18 { get => strokeButtons; set => strokeButtons = value; }
+        public string r19 { get => uselimitButtons; set => uselimitButtons = value; }
+        public string r20 { get => neckbackButtons; set => neckbackButtons = value; }
+        public string r21 { get => boneButtons; set => boneButtons = value; }
+        public string r22 { get => bloodButtons; set => bloodButtons = value; }
+        public string r23 { get => cancerButtons; set => cancerButtons = value; }
+        public string r24 { get => infectButtons; set => infectButtons = value; }
         public string ApneaButtons { get => apneaButtons; set => apneaButtons = value; }
-        public string SleeptestButtons { get => sleeptestButtons; set => sleeptestButtons = value; }
-        public string SleepDisconer { get => sleepDisconer; set => sleepDisconer = value; }
-        public string HospitalButtons { get => hospitalButtons; set => hospitalButtons = value; }
-        public string BrokenButtons { get => brokenButtons; set => brokenButtons = value; }
-        public string TobaccoButtons { get => tobaccoButtons; set => tobaccoButtons = value; }
-        public string AlcoholButtons { get => alcoholButtons; set => alcoholButtons = value; }
+        public string r26 { get => sleeptestButtons; set => sleeptestButtons = value; }
+        public string r25 { get => sleepDisconer; set => sleepDisconer = value; }
+        public string r27 { get => hospitalButtons; set => hospitalButtons = value; }
+        public string r28 { get => brokenButtons; set => brokenButtons = value; }
+        public string r29 { get => tobaccoButtons; set => tobaccoButtons = value; }
+        public string r30 { get => alcoholButtons; set => alcoholButtons = value; }
         public string IllegalButtons { get => illegalButtons; set => illegalButtons = value; }
         public string FailedButtons { get => failedButtons; set => failedButtons = value; }
         public string OtherButtons { get => otherButtons; set => otherButtons = value; }
@@ -483,8 +483,8 @@ physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracS
         // endpage4
 
         //page5
-        public string Lastname5 { get; set; }
-        public string Firstname5 { get; set; }
+        public string LastName5 { get; set; }
+        public string FirstName5 { get; set; }
         public string DOB5 { get; set; }
         public string DonotMeetStandards5 { get; set; }
         public string MeetStandards5 { get; set; }
