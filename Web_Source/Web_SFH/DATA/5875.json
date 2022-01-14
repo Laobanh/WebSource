@@ -1,0 +1,94 @@
+{
+  "en": {
+    "buttons1": [ "Yes", "No" ],
+    "buttons2": [ "Yes", "No", "No Sure" ],
+    "nameLast": "Last Name",
+    "nameFirst": "First Name",
+    "nameInitial": "Middle Initial",
+    "DOB": "DOB",
+    "birthDate": "Date Of Birth",
+    "examDate": "Exam Date",
+    "page1": {
+      "section": "SECTION 1. Driver Information (to be filled out by the driver)",
+      "medNumber": "MEDICAL RECORD",
+      "driverAge": "Age",
+      "driverAddress": "Street Address",
+      "driverCity": "City",
+      "driverState": "State/Province",
+      "driverZip": "Zip Code",
+      "driverLicense": "Driver's License Number",
+      "licenseState": "Issuing State/Province",
+      "driverPhone": "Phone",
+      "gender": "Gender",
+      "genderButtons": [ "M", "F" ],
+      "emailAddress": "E-mail (optional)",
+      "cdlButtonList": "CLP/CDL Applicant/Holder*",
+      "driverVerify": "Driver ID Verified By**",
+      "certDeny": "Has your USDOT/FMCSA medical certificate ever been denied or issued for lessthan 2 years?",
+      "hadsurgery": "Have you ever had surgery? If \"yes,\" please list and explain below. ",
+      "takingMedications ": "Are you currently taking medications (prescription, over-the-counter, herbal remedies, diet supplements)?If \"yes,\" please describe below."
+
+    },
+    "page2": {
+      "driverHistory": {
+        "title": "DRIVER HEALTH HISTORY",
+        "doYouHave": "Do you have or have you ever had:",
+        "1": "Head/brain injuries or illnesses (e.g., concussion)",
+        "2": "Seizures, epilepsy",
+        "3": "Eye problems (except glasses or contacts)",
+        "4": "Ear and/or hearing problems",
+        "5": "Heart disease, heart attack, bypass, or other heart problems",
+        "6": "Pacemaker,stents, implantable devices, or other heart procedures",
+        "7": "High blood pressure",
+        "8": "High cholesterol",
+        "9": "Chronic (long-term) cough, shortness of breath, or other breathing problems",
+        "10": "Lung disease (e.g., asthma)",
+        "11": "Kidney problems, kidney stones, or pain/problems with urination",
+        "12": "Stomach, liver, or digestive problems",
+        "13": "Diabetes or blood sugar problems Insulin used",
+        "14": "Anxiety, depression, nervousness, other mental health problems",
+        "15": "Fainting or passing out",
+        "16": "Dizziness, headaches, numbness, tingling, or memory loss",
+        "17": "Unexplained weight loss",
+        "18": "Stroke, mini-stroke (TIA), paralysis, or weakness",
+        "19": "Missing or limited use of arm, hand, finger, leg, foot, toe",
+        "20": "Neck or back problems",
+        "21": "Bone, muscle, joint, or nerve problems",
+        "22": "Blood clots or bleeding problems",
+        "23": "Cancer",
+        "24": "Chronic (long-term) infection or other chronic diseases",
+        "25": "Sleep disorders, pauses in breathing while asleep, daytime sleepiness, loud snoring",
+        "26": "Have you ever had a sleep test (e.g., sleep apnea)?",
+        "27": "Have you ever spent a night in the hospital?",
+        "28": "Have you ever had a broken bone?",
+        "29": "Have you ever used or do you now use tobacco?",
+        "30": "Do you currently drink alcohol?",
+        "31": ". Have you used an illegal substance within the past two years?",
+        "32": "Have you ever failed a drug test or been dependent on an illegal substance?"
+      },
+      "healthCondition": "Other health condition(s) not described above:",
+      "answer": "Did you answer \"yes\" to any of questions 1-32? If so, please comment further on those health conditions below.",
+      "driverSignature": {
+        "title": "CMV DRIVER'S SIGNATURE",
+        "content": " certify that the above information is accurate and complete. I understand that inaccurate, false or missing information may invalidate the examination and my Medical Examiner's Certificate, that submission of fraudulent or intentionally false information is a violation of 49 CFR 390.35, and that submission of fraudulent or intentionally false information may subject me to civil or criminal penalties under 49 CFR 390.37 and 49 CFR 386 Appendices A and B.",
+        "signature": "Driver's Signature",
+        "date": "Date"
+      },
+      "section": "SECTION 2. Examination Report (to be filled out by the medical examiner)",
+      "driverHealthHistoryReview": {
+        "title": "DRIVER HEALTH HISTORY REVIEW",
+        "content": "Review and discuss pertinent driver answers and any available medical records. Comment on the driver's responses to the \"health history\" questions that may affect the driver's safe operation of a commercial motor vehicle (CMV)."
+      }
+
+    },
+    "page3": {
+      "test": {
+        "title": "TESTING",
+        "pulseRate": "Pulse rate",
+        "pulseRhythmRegular": "Pulse rhythm regular",
+        "Heigh": "Heigh",
+        "Weight": "Weight"
+      }
+    }
+  }
+}

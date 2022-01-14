@@ -1,0 +1,28 @@
+﻿{
+  "MyOrganization": {
+    "CompanyName": "Santafe Health Clinic",
+    "Username": "noreply@gpsvn.com.vn",
+    "Password": "KlStWGbb/Vf/PgI74/P/hT2nspf9VUyipKprEdaeFAU4D2sOx8DkFFGPyzAfPhGfrImF94qgI1Nq2CtG+eNI4moQL4pljSNLyEyIq7YgnGJ+2i6ppFYQHUMf7Q2m5To6",
+    "Server": "smtp.gmail.com",
+    "From": "noreply@gpsvn.com.vn",
+    "FromName": "Santafe Health Clinic No Reply",
+    "To": "0",
+    "ToName": "0",
+    "Cc": "support@gpsvn.com.vn",
+    "CcName": "Thòng Thủ Thọ",
+    "Bcc": "info@sfhealthclinic.com",
+    "BccName": "Santafe Health Clinic",
+    "PortSSL": 465,
+    "Port": 587,
+    "Zip": 91770,
+    "FirstName": "Tran",
+    "LastName": "Vivian",
+    "MobilePhone": "(213)268-6108",
+    "WorkPhone": "(323)287-8783",
+    "Address": "8818A Garvey Ave",
+    "State": "CA",
+    "City": "Rosemead",
+    "Notice": "<p>****** CONFIDENTIALITY NOTICE ******</p><p>NOTICE: This e-mail message and all attachments transmitted with it may contain legally privileged and confidential information intended solely for the use of the addressee. If the reader of this message is not the intended recipient, you are hereby notified that any reading, dissemination, distribution, copying, or other use of this message or its attachments is strictly prohibited. If you have received this message in error, please notify the sender immediately and delete this message from your system.</p>",
+    "Content": "<p><span>以下是貴公司名下的司機被&nbsp;DOT&nbsp;抽查抽中要做尿检。請通知司機尽快在</span> <span style=\"background-color:yellow;padding:3px;\">#Date#</span><span>前到我們診所來做&nbsp;DOT&nbsp;的隨机的尿检抽查，是免費的。</span></p><p><span>如果司機未能在限期内实行，他的 DOT 毒品和/或酒精测试会员將被 “取消”并将被视为“拒绝”了该测试。</span></p><p><span>如果以下司機已辭職了，請EMIAL我們說明司机在那月份離職。請提供所有已離職司機名單和註明要求取消，以及另外名單列出所有正在貴公司工作的司機。</span></p><br><p><span>公司名：</span><br><span style=\"background-color:yellow;padding:3px;\">#CompanyName#</span></p><br><p><span>司机被抽查中：</span><br></p><p>#DonorList#</p><br><p><span>六天營業（不需預約）</span><br><span>周一到周五：10:00am - 6:00pm</span><br><span>周六&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ：休息</span><br><span>周日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ：10:00am - 3:00pm</span></p><p><span>體檢中心地址</span></p><p><span>謝謝</span></p><p><span>體檢中心陳小姐</span></p><p><span>Hi there</span></p><p><span>You company driver/s(see below) have been selected for drug and/or alcohol testing for DOT program of random selection.</span>    </p><p><span>Please inform below driver/s come to our clinic immediately or before&nbsp;&nbsp;<span style=\"background:yellow; padding:3px;\">#Date#</span> for the random testing. It‘s Free of charge. If driver fail to arrive within the reasonable amount of time allowed driver will be deemed to have refused the test and will be removed from DOT drug and/or alcohol testing program.</span></p><p><span>If below driver no longer working for your company If below driver NO longer working for your company<span>&nbsp;please</span>&nbsp;<strong><span style=\"background:yellow;padding:5px;\">provide us 2 lists</span></strong>&nbsp;as follow</span></p><ol style=\"margin-top:0in\" type=\"1\" start=\"1\"><li><span>A list to show ALL drivers who are NO longer  working for the company and request their memberships to be cancelled. We will process the termination and remove them from the program.</span></li><li><span>A list for drivers who are currently working for the company.&nbsp;</span></li></ol><p><span>Company name:</span><br><span style=\"background-color:yellow;padding:3px;\">#CompanyName#</span></p><br><p><span>Selected driver/s for, random test </span><br></p><p>#DonorList#</p><br><p><span>Business  Hours</span><br><span>Mon - Fri:&nbsp; 10:00am to 6:00pm</span><br><span>Sat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; Close</span><br><span>Sunday&nbsp; :&nbsp; 10:00am to 3:00pm</span></p>"
+  }
+}

@@ -1,0 +1,157 @@
+﻿#toolbar {
+    width: 100%;
+    height: 30px;
+    margin: 10px;  
+
+}
+
+    .title p {
+        padding-left: 20px;        
+        color: #0a5dac;
+        /*font-weight: bolder;*/
+        float: left;
+    }
+
+    #toolbar .toolbar {
+        width: 70%;
+        padding-left: 20px;
+        float: left;
+    }
+
+        #toolbar .toolbar table, tr, td {
+            margin: 0;
+            border: 0;
+            padding: 0;
+        }
+
+        #toolbar .toolbar td {
+            width: 50px;
+            text-align: right;
+        }
+
+            #toolbar .toolbar .date td{
+                width: 40px;
+                text-align: center;
+                border-radius: 5px;
+                border: solid 1px #0a5dac;
+                font-size: 0.8em;
+            }
+
+                #toolbar .toolbar .date td:hover {
+                    font-weight: bold;
+                    cursor: pointer;
+                    text-decoration: underline;
+                    font-weight: bolder;
+                }
+
+            #toolbar .toolbar td input {
+                text-align: center;
+                width: 30px;
+            }
+
+        #toolbar .toolbar .search p {
+            width: 140px;
+            padding: 5px;
+            text-align: center;
+            border-radius: 5px;
+            border: solid 1px #0a5dac;
+            background-color: #f3f1f1;
+            margin-left: 30px;
+            color: #0a5dac;
+            font-size: 0.8em;
+        }
+
+            #toolbar .toolbar p.search:hover {
+                color: #fff;
+                background-color: #0a5dac;
+                cursor: pointer;
+            }
+
+    #toolbar .signout {
+        text-decoration: underline;
+        color: #0a5dac;
+        font-size: 1.2em;
+        width: 8%;
+        float:right;
+    }
+
+        #toolbar .signout:hover {
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+.sender {
+    width: 600px;
+    height: 30px;
+    /*background-color:#0a5dac;*/
+}
+    .sender .senderTitle p {
+        width: 150px;
+        background-color: #fff;
+        text-align: right;
+        padding-right: 2px;
+        padding-top: 5px;
+        float: left;
+    }
+    .sender .destination p {
+        width: 300px;
+        float: left;
+        /*background-color:#565555;*/
+        padding: 5px;
+    }
+    .sender button.ok {
+        width: 80px;
+        background-color: #f3f1f1;
+        font-size: 0.8em;
+        border: solid 1px #0a5dac;
+        border-radius: 5px;
+        float: left;
+        padding: 2px;
+        margin-top: 5px;
+        top: 5px;
+        text-align: center;
+        color: #0a5dac;
+        cursor:pointer;
+    }
+        .sender button.ok:hover {
+            background-color: #0a5dac;
+            border: solid 1px #0a5dac;
+            border-radius: 5px;
+            color:#fff;
+        }
+
+#date {
+    display: none;
+    width: 80px;
+    height: auto;
+    position: absolute;
+    z-index: 9;
+}
+
+    #date .cells {
+        position: relative;
+        width: 80px;       
+        list-style: none;
+        padding: 3px;
+        font-size: 1em;
+        text-align: center;
+        margin: 0;
+        background-color: #fff;
+        border: solid 1px #565555;
+        border-radius: 3px;
+        overflow:auto;
+    }
+
+        #date .cells li {
+            width: 100%;
+            padding: 5px 0 5px 0;
+        }
+
+            #date .cells li:hover {
+                color: #fff;
+                font-weight: bolder;
+                border-bottom: dotted 1px #0a5dac;
+                background-color: #0a5dac;
+                cursor: pointer;
+                text-decoration: underline;
+            }

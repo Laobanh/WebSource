@@ -1,0 +1,319 @@
+﻿.httgridview {
+    /*width: 1460px;*/
+    /*height: 780px;*/
+    /*background-color: #fbf7f7;*/
+    /*overflow: hidden;*/
+    padding-left: 20px;   
+    float: left;
+    position: relative;
+    margin-top:8px;
+    clear: both;   
+}
+
+#header {   
+    display: block;
+    position: absolute;
+}
+
+.tabHeaderDiv {
+    background-color: #6da331;
+    border: solid 1px #6da331;
+    border-radius: 4px;
+    /*height:50px; #82b04f*/
+}
+
+.tab0 {
+    font-family: sans-serif;
+    /*font-weight:bolder;*/
+    margin-left: 1px;    
+    padding: 4px 0 8px 0;
+    
+}
+
+
+    .tab0 .header {
+        color:#fff;
+    }
+
+    .tab0, .tab0 td {
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+
+        .tab0 .header td {
+            /*border-left: 1px solid #CCC;*/
+            /*padding-bottom:5px;*/
+            padding-top: 6px;
+            /*background-color:#f00;*/
+            /*font-size: 0.9em;*/
+        }
+
+        .tab0 .title {
+            padding-left: 1px;
+        }
+
+        .tab0 span {
+            border: 0;
+            padding: 0;
+            margin:0 3px 0 0;
+            font-size: 0.9em;            
+        }
+
+            .tab0 span:hover {
+                cursor: pointer;
+            }
+
+            .tab0 span.sort {           
+                width: 14px;               
+                float: left;
+            }
+
+            .tab0 span.label {
+                height: 20px;
+                padding-top: 0px;
+                /*text-align: center;*/
+                float: left;
+            }
+
+            .tab0 span.filter {
+                background: url("../images/ic_filter_24_1.png") no-repeat right;
+                background-size: 8px 12px;
+                background-position-y: 2px;
+                width: 8px;
+                height: 20px;
+                float: left;
+                /*margin-right: 3px;*/
+            }
+
+        .tab0 .asc {
+            background: url("../images/ic_ascending_sorting_24_1.png") no-repeat left;
+            background-size: 12px 16px;
+            background-position-y: 0px;
+            background-position-x: 3px;
+            width: 14px;
+            height: 20px;
+            /*width: 15px;
+            height: 20px;*/
+            /*background-color:#000;*/
+        }
+
+        .tab0 .desc {
+            background: url("../images/ic_descending_sorting_24_1.png") no-repeat left;
+            background-size: 12px 16px;
+            background-position-y:0px;
+            background-position-x: 3px;
+            width: 14px;
+            height: 20px;
+            /*width: 15px;
+            height: 20px;*/
+        }
+
+
+#content {
+    width: 100%;
+    min-height: 300px;
+    margin-top:45px;
+    position:relative;
+    /*overflow: scroll;*/
+    /*overflow-style:move;*/
+    /*background-color:#f00;*/
+}
+
+.tabRowDiv {
+    border: solid 1px #e6e6e6;
+    border-radius: 4px;
+    margin: 6px 0 6px 0;   
+}
+
+    .tabRowDiv :hover {
+        background-color: #eae9e9;       
+    }
+
+.tab {
+    /*border-collapse: collapse;*/
+    font-family: sans-serif;
+    font-size: 0.9em;
+}
+    .tab tr, .tab td {
+        margin: 0;
+        border: 0;
+        padding: 0;       
+    }    
+
+    .tab p {
+        float: left;        
+        font-size: 0.95em;
+        cursor: pointer;        
+        
+    }
+
+        .tab p:hover {
+            text-decoration: underline;
+           
+        }
+
+p.pdf {
+    width: 26px;
+    height: 26px;
+    background: url('../images/ic_pdf.png') center no-repeat;
+    background-size: 24px 24px;
+    padding-left: 0px;
+}
+
+        .tab p.detail {
+            width: 26px;
+            height: 26px;
+            background: url('../images/ic_view_details_48.png') center no-repeat;
+            background-size: 24px 24px;
+            background-position-x: 5px;
+        }
+        .tab p.edit {
+            width: 26px;
+            height: 26px;
+            background: url('../images/ic_edit_24_3.png') center no-repeat;
+            background-size: 24px 24px;
+            background-position-x: 5px;
+        }
+
+        .tab p.delete {
+            width: 26px;
+            height: 26px;
+            background: url('../images/ic_trash_24_3.png') center no-repeat;
+            background-size: 24px 24px;
+            background-position-x: 5px;
+        }
+
+        .tab p.checked {
+            width: 26px;
+            height: 26px;
+            background: url('../images/ic_checked_24_3.png') center no-repeat;
+            background-size: 18px 18px;
+            background-position-x: 5px;
+        }
+
+        .tab p.unchecked {
+            width: 26px;
+            height: 26px;
+            background: url('../images/ic_unchecked_24_3.png') center no-repeat;
+            background-size: 18px 18px;
+            background-position-x: 5px;
+        }
+
+#footer {
+    width: 100%;
+    height: 30px;
+    bottom: 0;   
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 0.9em;   
+    position:relative;
+}
+
+    #footer .lfooter p {
+        width: auto;
+        height: 20px;
+        padding-top: 5px;
+        float: left;
+    }
+
+    #footer .lfooter {
+        width: 70%;
+        /*height:100%;*/
+        float: left;
+    }
+
+    #footer .rfooter {
+        width: 25%;
+        /*height:100%;*/
+        color: #03305b;
+        padding: 2px 5px 0 5px;
+        float: left;
+        font-size:1em;
+    }
+
+.rfooter p {
+    padding-left: 5px;
+}
+
+.tabfooter {
+    border: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
+}
+
+    .tabfooter p {
+        color: #000;
+        text-align: center;
+        float: left;
+    }
+
+    .tabfooter .page {
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 2px 8px 2px 8px;
+        width: auto;
+        height: 20px;
+        font-size: 0.9em;
+        margin: 0 4px 0 4px;
+        cursor: pointer;
+    }
+
+    .tabfooter .pageCount {
+        width: auto;
+        height: 20px;
+    }
+
+    .tabfooter .selectpage {
+        cursor: default;
+        font-weight: bolder;
+        font-size: 0.9em;
+        background-color: #6da331;
+        color: #fff;
+        margin: 0 4px 0 4px;
+        border: 1px solid #6da331;
+        border-radius: 5px;
+        padding: 0 8px 0 8px;
+        width: auto;
+        height: 16px;
+    }
+
+    .tabfooter .disabled {
+        /*cursor:default;      
+         font-weight: bolder; 
+        border:0;
+        padding:0;
+        */
+        width: 0px;
+        height: 0px;
+        margin: 0 4px 0 4px;
+        border: 0;
+    }
+
+#search {
+    display: none;
+    position: absolute;
+    background-color: #eae9e9;
+    width: 260px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #03305b;
+    z-index: 2;
+}
+
+    #search table {
+        width: 100%;
+    }
+
+    #search .keyword {
+        width: 100%;
+        margin:5px 3px 5px 0;
+    }
+
+    #search button {
+        width: 80%;
+        margin: auto;
+
+    }

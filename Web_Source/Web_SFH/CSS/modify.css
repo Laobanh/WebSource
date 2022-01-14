@@ -1,0 +1,201 @@
+﻿.modify {
+    width: 900px;
+    height: 760px;
+    background-color: #fff;
+    position: relative;
+    /*z-index: 1;*/
+    top: 0;
+    /*left: 880px;*/
+    /*right:0;*/
+    /*float: left;*/
+    font-family: sans-serif;   
+}
+
+.modify div, .modify table, .modify p{
+    margin:0;
+    border:0;
+    padding:0;
+    
+}
+
+    .modify p.notification {
+        height: 20px;
+        width:auto;
+        font-size: 0.8em;
+        padding: 5px 0 0 10px;
+        margin-bottom: 3px;
+        border: solid 1px #6da331;
+        border-radius: 3px;
+        /*background-color: #f7f5f5;*/        
+        color: #064b16;
+        position: relative;
+        display: none;
+        /*box-shadow: 8px 14px 20px #1fb141 inset;*/
+    }
+
+
+    .modify p.title {
+        /*width: auto;*/
+        /*height: 20px;*/
+        font-size: 0.9em;
+        padding: 8px 0 8px 20px;
+        border: solid 1px #6da331;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        background-color: #6da331;
+        position: relative;
+        color: #fff;       
+    }
+
+    .modify table {
+        width: 100%;
+        border: solid 1px #e6e6e6;
+        position:relative;
+        padding:10px;      
+       
+    }
+
+    .modify td {
+        padding: 3px 0 3px 10px;
+        font-size: 0.95em;
+        margin: 0;
+        border: 0;
+        vertical-align:top;
+    }
+
+        .modify td input{
+            padding: 4px 3px 4px 3px;
+            font-size: 0.9em;
+            border: solid 1px #ccc;
+            border-radius: 3px;
+            width: 280px;
+        }
+            .modify td input[type=time], .modify td input[type=date] {
+                padding: 2px 3px 2px 3px;
+                font-size: 1.2em;
+                color: #000;
+            }
+            .modify td input[type=checkbox]{
+                width:20px;
+            }
+
+select {
+    padding: 3px;
+    background-color:#e6e6e6;
+    border: solid 1px #ccc;
+    border-radius: 3px;
+    width: 288px;
+}
+
+        .modify td.title {
+            padding: 10px 0 0 10px;
+            font-size: 0.85em;
+            /*font-weight: bold;*/
+        }
+        .required {
+            border:solid 1px #f00;
+        }
+
+.modify p.submit {
+    width: 160px;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    border-radius: 5px;
+    border: solid 1px #6da331;
+    background-color: #6da331;
+    color: #fff;
+    font-size: 1.1em;
+    margin: 10px 0 0 20px;
+}
+
+    .modify p.submit:hover {
+        border: solid 1px #35792a;
+        background-color: #35792a;
+        color: #e6e6e6;
+        cursor: pointer;
+    }
+.modify p.calendar {
+    width: 30px;
+    height: 22px;
+    background: url('../Images/ic_calendar_48.png') center no-repeat;
+    margin-left: 120px;
+    /*float: left;*/
+    background-size: 30px 22px;
+    top:0;
+    /*position: fixed;*/
+    display:block;
+}
+    .modify p.calendar:hover {
+        cursor: pointer;
+    }
+
+.modify p.sel {
+    background: url(../images/ic_drop_down_24_1.png) no-repeat;
+    background-size: 14px 14px;
+    background-position: 96% 70%;
+    width: 100%;
+    min-height:20px;
+    padding: 7px 0 0 7px;
+    color: #fff;
+    font-size: 0.9em;
+}
+
+#panel .cells {
+    min-height: 180px;
+    width: 180px;
+    background-color: #6da331;
+    overflow: auto;
+    margin: 5px;
+    padding:10px;
+    color:#fff;
+    /*border:solid 1px #f00;*/
+}
+
+    #panel .cells li {
+        font-size: 0.8em;
+        list-style: none;
+        padding:5px;
+        color:#fff;
+        /*border:solid 1px #000;*/
+        
+    }
+
+
+
+        #panel .cells li:hover {
+            color: #fff;
+            font-weight: normal;           
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+#error {
+    font-size: 1em;
+    font-style: italic;
+    padding-top: 10px;
+}
+
+.link {
+     font-size:0.95em;
+     color:#03305b;    
+}
+
+    .link:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    p.button{
+        min-width:100px;
+        background-color:#35792a;
+        color:#fff;
+        border:solid 1px #35792a;
+        border-radius:3px;
+        padding:5px 10px 5px 10px;
+        text-align:center;
+        font-size:0.9em;
+    }
+        p.button:hover {
+            background-color: #6da331;
+            cursor:pointer;
+        }
+

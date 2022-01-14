@@ -1,0 +1,15 @@
+{
+  "Pull": [ "Pull For Company", "Pull For Consortium" ],
+  "CollectionSite": [ "SANTAFE HEALTH CLINIC & LAI CHIRO" ],
+  "Mro": [],
+  "Lab": [ "Phamtech", "CRL", "Lab Corp", "Quest" ],
+  "Dot": [ "Both", "True", "False" ],
+  "Repeat": [ "Don't Repeat", "X times per week", "X times per month", "X times per quarter", "X times per year" ],
+  "SpecimenType": [ "Urine", "Alcohol", "Blood", "Hair" ],
+  "SpecimenPanel": [],
+  "NumberOfDonorType": [ "People from the group", "Percent of people from the group" ],
+  "TestType": [ "Pre-employment", "Random", "Post Accident", "Reasonable Suspecision/Cause", "Physical exam", "Return to Duty", "Follow-up", "Other" ],
+  "Role": [ "Client", "Collection Facility", "Lab", "MRO", "SAP" ],
+  "Permissions": [ "Basic Client", "Order Tests", "Schedule", "Edit People", "Add People", "View Results", "Alternate List", "Reports" ],
+  "Occupations": [ "CDL/Cross border driver (FMCSA)", "Driver (FMCSA)", "Aircraft Maintenance (FAA)", "Air Traffic Controller (FAA)", "Aviation Screener (FAA)", "Flight Attendant (FAA)", "Flight Crewmember (FAA)", "Flight Instructor (FAA)", "Ground Security Coordinator (FAA)", " Dispatch/Operator (FRA)", "Engine Service (FRA)", "Maintenance of Way (FRA)", "Signal Service (FRA)", "Train Service (FRA)", "Armed Security Personnel (FTA)", "CDL/Non-Revenue Vehicle (FTA)", "Revenue Vehicle Control/Dispatch (FTA)", "Revenue Vehicle & Equipment Maintenance (FTA)", "Revenue Vehicle Operation (FTA)", "Hazardous Material (PHMSA)", "Operation/Maintenance/Emergency (PHMSA)", "Pipeline/FMCSA (PHMSA)", "Crewmember (USCG)", "Administrative Poisition", "Administrative Position", "Apache", "Childcare", "Collector", "DER", "Donna", "FMCSA/FTA-Driver", "FTA-Non Driver", "Laborer", "Linda", "Non-DOT", "Non-Mandated Worker", "Private/Court Random Testing Participant", "Shill", "Transit Vehicle Mechanic", "XTO" ]
+}

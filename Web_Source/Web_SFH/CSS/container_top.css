@@ -1,0 +1,154 @@
+﻿.container_top {
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    background-color: #03305b;
+    position: relative;
+}
+
+    .container_top p {
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+
+    .container_top .menuIcon {
+        width: 40px;
+        height: 40px;
+        background: url(../images/ic_menu_48.png) left no-repeat;
+        background-size: 28px 28px;
+        background-color: transparent;
+        float: left;
+        position: relative;
+    }
+
+    .container_top .logo {
+        /*width: 1px;*/ 
+        height: 40px;       
+        background-color: transparent;
+        float: left;
+        position: relative;
+    }
+
+    .container_top .wellcome {
+        width: 600px;
+        height: 3px;
+        float: left;
+        position: relative;
+        background-color: transparent;
+        padding: 10px 0 0 10px;
+        color:#fff;
+    }
+
+
+.menu {
+    width: 200px;
+    background-color: #03305b;
+    position: absolute;
+    /*display: none;*/
+    top: 0;
+    left: 0;
+    margin-top: 40px;
+    z-index: 1;
+}
+
+    .menu ul, li p {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        font-family: sans-serif;
+        font-size: 0.9em;
+        list-style: none;
+    }
+
+
+.root {
+    width: 200px;
+    height: 40px;
+    background-color: #03305b;
+    position: relative;
+    display: block;
+}
+
+    .root .root_line {
+        width: 3px;
+        height: 40px;
+        /*background-color:#4cff00;*/
+        float: left;
+    }
+
+
+    .root .root_icon {
+        width: 35px;
+        height: 40px;
+        background-color: transparent;
+        float: left;
+    }
+
+    .root .root_label {
+        width: 140px;
+        /*height:30px;*/
+        /*background-color:#808080;*/
+        text-align: left;
+        padding-top: 12px;
+        color: #f1f2f4;
+        float: left;
+        cursor: pointer;
+    }
+
+    .root .root_arrow {
+        width: 22px;
+        height: 40px;     
+        background-color: transparent;
+        float: left;
+        cursor: pointer;      
+    }
+
+.arrow1 {
+    background: url('../images/menu/ic_arrow_24_1.png') center no-repeat;
+    background-size: 12px 12px;
+}
+
+.arrow2 {
+    background: url('../images/menu/ic_arrow_24_2.png') center no-repeat;
+    background-size: 12px 12px;
+}
+
+.hover, .select {
+    background-color: #4cff00;
+}
+
+.node_div {
+    display: none;
+}
+.node {
+    width: 200px;
+    min-height: 35px;
+    background-color: #021d37;
+    position: relative;
+   
+}
+
+    .node .node_line {
+        width: 3px;
+        height: 35px;
+        /*background-color:#4cff00;*/
+        float: left;
+    }
+
+    .node .node_icon {
+        width: 37px;
+        height: 35px;
+        background-color: transparent;
+        float: left;
+    }
+
+    .node .node_label {
+        width: 160px;
+        /*height:38px;*/
+        text-align: left;
+        padding-top: 10px;
+        color: #f1f2f4;
+        float: left;
+        cursor: pointer;
+    }

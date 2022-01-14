@@ -1,0 +1,25 @@
+﻿.error {
+    color:#f00;    
+    /*padding:10px;*/
+}
+
+.succeed {
+    color:#59bd0a;
+}
+
+.txt {
+    color:#555;
+}
+.txtCenter {
+    text-align:center;    
+}
+.redText {
+    color:#f00;    
+}
+.greenText {
+    color: #59bd0a;
+}
+
+.whiteText {
+    color:#fff;
+}

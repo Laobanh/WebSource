@@ -1,0 +1,764 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{01C58B42-A5CD-4F1B-83D4-62BF44AE7DAB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web_SFH</RootNamespace>
+    <AssemblyName>Web_SFH</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core, Version=4.4.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FSharp.Core.4.2.3\lib\net45\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.4.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.4.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.4.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.4.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.4.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.4.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2020.0.1.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2020.0.1\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.5.0.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.5.0.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="2.htm" />
+    <Content Include="3-5.html" />
+    <Content Include="Company\Default.aspx" />
+    <Content Include="CSS\button.css" />
+    <Content Include="CSS\container_top.css" />
+    <Content Include="CSS\form.css" />
+    <Content Include="CSS\httGirdView.css" />
+    <Content Include="CSS\httGridView.css" />
+    <Content Include="CSS\icon.css" />
+    <Content Include="CSS\main.css" />
+    <Content Include="CSS\popup.css" />
+    <Content Include="CSS\text.css" />
+    <Content Include="CSS\Toolbar.css" />
+    <Content Include="CSS\modify.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Demo.aspx" />
+    <Content Include="dist\trumbowyg.js" />
+    <Content Include="dist\trumbowyg.min.js" />
+    <Content Include="dist\ui\icons.svg" />
+    <Content Include="dist\ui\trumbowyg.css" />
+    <Content Include="dist\ui\trumbowyg.min.css" />
+    <Content Include="Donor\Default.aspx" />
+    <Content Include="emailContent.html" />
+    <Content Include="Exam.aspx" />
+    <Content Include="Groups\Default.aspx" />
+    <Content Include="html2Canvas.aspx" />
+    <Content Include="Images\5875_header.png" />
+    <Content Include="Images\5876_header.png" />
+    <Content Include="Images\down_arrow_14.png" />
+    <Content Include="Images\ico_90.png" />
+    <Content Include="Images\filter_12.png" />
+    <Content Include="Images\filter_14.png" />
+    <Content Include="Images\filter_20.png" />
+    <Content Include="Images\icon_bg.jpg" />
+    <Content Include="Images\icon_bg.png" />
+    <Content Include="Images\icon_bg2.png" />
+    <Content Include="Images\ic_ascending_sorting_24_1.png" />
+    <Content Include="Images\ic_ascending_sorting_24_2.png" />
+    <Content Include="Images\ic_ascending_sorting_24_3.png" />
+    <Content Include="Images\ic_ascending_sorting_24_4.png" />
+    <Content Include="Images\ic_calendar_48.png" />
+    <Content Include="Images\ic_checked_24_1.png" />
+    <Content Include="Images\ic_checked_24_2.png" />
+    <Content Include="Images\ic_checked_24_3.png" />
+    <Content Include="Images\ic_checked_24_4.png" />
+    <Content Include="Images\ic_close_48.png" />
+    <Content Include="Images\ic_delete_bin_24_1.png" />
+    <Content Include="Images\ic_delete_bin_24_2.png" />
+    <Content Include="Images\ic_delete_bin_24_3.png" />
+    <Content Include="Images\ic_delete_bin_24_4.png" />
+    <Content Include="Images\ic_descending_sorting_24_1.png" />
+    <Content Include="Images\ic_descending_sorting_24_2.png" />
+    <Content Include="Images\ic_descending_sorting_24_3.png" />
+    <Content Include="Images\ic_descending_sorting_24_4.png" />
+    <Content Include="Images\ic_doctor_100_1.png" />
+    <Content Include="Images\ic_doctor_100_2.png" />
+    <Content Include="Images\ic_doctor_100_3.png" />
+    <Content Include="Images\ic_doctor_100_4.png" />
+    <Content Include="Images\ic_drop_down_24.png" />
+    <Content Include="Images\ic_drop_down_24_1.png" />
+    <Content Include="Images\ic_edit_24_1.png" />
+    <Content Include="Images\ic_edit_24_2.png" />
+    <Content Include="Images\ic_edit_24_3.png" />
+    <Content Include="Images\ic_edit_24_4.png" />
+    <Content Include="Images\ic_filter_24_1.png" />
+    <Content Include="Images\ic_filter_24_2.png" />
+    <Content Include="Images\ic_filter_24_3.png" />
+    <Content Include="Images\ic_filter_24_4.png" />
+    <Content Include="Images\ic_flag_china.png" />
+    <Content Include="Images\ic_flag_us.png" />
+    <Content Include="Images\ic_flask_64_1.png" />
+    <Content Include="Images\ic_flask_64_2.png" />
+    <Content Include="Images\ic_flask_64_3.png" />
+    <Content Include="Images\ic_flask_64_4.png" />
+    <Content Include="Images\ic_folder_user_50_gray.png" />
+    <Content Include="Images\ic_left_arrow.png" />
+    <Content Include="Images\ic_loading.gif" />
+    <Content Include="Images\ic_menu_100.png" />
+    <Content Include="Images\ic_menu_48.png" />
+    <Content Include="Images\ic_password_24_1.png" />
+    <Content Include="Images\ic_password_24_2.png" />
+    <Content Include="Images\ic_password_24_3.png" />
+    <Content Include="Images\ic_password_24_4.png" />
+    <Content Include="Images\ic_pdf.png" />
+    <Content Include="Images\ic_plus_240_01.png" />
+    <Content Include="Images\ic_plus_240_02.png" />
+    <Content Include="Images\ic_thks.png" />
+    <Content Include="Images\ic_trash_24_1.png" />
+    <Content Include="Images\ic_trash_24_2.png" />
+    <Content Include="Images\ic_trash_24_3.png" />
+    <Content Include="Images\ic_trash_24_4.png" />
+    <Content Include="Images\ic_unchecked_24_1.png" />
+    <Content Include="Images\ic_unchecked_24_2.png" />
+    <Content Include="Images\ic_unchecked_24_3.png" />
+    <Content Include="Images\ic_unchecked_24_4.png" />
+    <Content Include="Images\ic_user_24_1.png" />
+    <Content Include="Images\ic_user_24_2.png" />
+    <Content Include="Images\ic_user_24_3.png" />
+    <Content Include="Images\ic_user_24_4.png" />
+    <Content Include="Images\ic_view_details_48.png" />
+    <Content Include="Images\Loading_icon.gif" />
+    <Content Include="Images\menu\ic_arrow_24_1.png" />
+    <Content Include="Images\menu\ic_arrow_24_3.png" />
+    <Content Include="Images\menu\ic_arrow_24_4.png" />
+    <Content Include="Images\menu\ic_billing_24_1.png" />
+    <Content Include="Images\menu\ic_billing_24_2.png" />
+    <Content Include="Images\menu\ic_billing_24_3.png" />
+    <Content Include="Images\menu\ic_billing_24_4.png" />
+    <Content Include="Images\menu\ic_company_24_1.png" />
+    <Content Include="Images\menu\ic_company_24_2.png" />
+    <Content Include="Images\menu\ic_company_24_3.png" />
+    <Content Include="Images\menu\ic_company_50_2.png" />
+    <Content Include="Images\menu\ic_company_50_3.png" />
+    <Content Include="Images\menu\ic_dashboard_24_1.png" />
+    <Content Include="Images\menu\ic_dashboard_24_2.png" />
+    <Content Include="Images\menu\ic_dashboard_24_3.png" />
+    <Content Include="Images\menu\ic_dashboard_24_4.png" />
+    <Content Include="Images\menu\ic_donor_24_1.png" />
+    <Content Include="Images\menu\ic_donor_24_2.png" />
+    <Content Include="Images\menu\ic_donor_24_3.png" />
+    <Content Include="Images\menu\ic_driver_24_1.png" />
+    <Content Include="Images\menu\ic_driver_24_2.png" />
+    <Content Include="Images\menu\ic_driver_24_3.png" />
+    <Content Include="Images\menu\ic_driver_50_2.png" />
+    <Content Include="Images\menu\ic_driver_50_3.png" />
+    <Content Include="Images\menu\ic_exam_24_1.png" />
+    <Content Include="Images\menu\ic_exam_24_2.png" />
+    <Content Include="Images\menu\ic_exam_24_3.png" />
+    <Content Include="Images\menu\ic_exam_24_4.png" />
+    <Content Include="Images\menu\ic_exam_50_2.png" />
+    <Content Include="Images\menu\ic_exam_50_3.png" />
+    <Content Include="Images\menu\ic_exit_24_1.png" />
+    <Content Include="Images\menu\ic_folder_24_1.png" />
+    <Content Include="Images\menu\ic_folder_24_2.png" />
+    <Content Include="Images\menu\ic_folder_24_3.png" />
+    <Content Include="Images\menu\ic_folder_24_4.png" />
+    <Content Include="Images\menu\ic_folder_user_24_1.png" />
+    <Content Include="Images\menu\ic_folder_user_24_2.png" />
+    <Content Include="Images\menu\ic_folder_user_24_3.png" />
+    <Content Include="Images\menu\ic_folder_user_24_4.png" />
+    <Content Include="Images\menu\ic_folder_user_50_2.png" />
+    <Content Include="Images\menu\ic_folder_user_50_3.png" />
+    <Content Include="Images\menu\ic_preferences_24_1.png" />
+    <Content Include="Images\menu\ic_preferences_24_2.png" />
+    <Content Include="Images\menu\ic_preferences_24_3.png" />
+    <Content Include="Images\menu\ic_preferences_24_4.png" />
+    <Content Include="Images\menu\ic_random_24_1.png" />
+    <Content Include="Images\menu\ic_random_24_2.png" />
+    <Content Include="Images\menu\ic_random_24_3.png" />
+    <Content Include="Images\menu\ic_random_50_2.png" />
+    <Content Include="Images\menu\ic_random_50_3.png" />
+    <Content Include="Images\menu\ic_report_24_1.png" />
+    <Content Include="Images\menu\ic_report_24_2.png" />
+    <Content Include="Images\menu\ic_report_24_3.png" />
+    <Content Include="Images\menu\ic_report_24_4.png" />
+    <Content Include="Images\menu\ic_report_50_2.png" />
+    <Content Include="Images\menu\ic_report_50_3.png" />
+    <Content Include="Images\menu\ic_schedule_24_1.png" />
+    <Content Include="Images\menu\ic_schedule_24_2.png" />
+    <Content Include="Images\menu\ic_schedule_24_3.png" />
+    <Content Include="Images\menu\ic_schedule_24_4.png" />
+    <Content Include="Images\menu\ic_test_24_1.png" />
+    <Content Include="Images\menu\ic_test_24_2.png" />
+    <Content Include="Images\menu\ic_test_24_3.png" />
+    <Content Include="Images\menu\ic_test_24_4.png" />
+    <Content Include="Images\no_image_100.png" />
+    <Content Include="Images\sort_asc_14.png" />
+    <Content Include="Images\sort_desc_14.png" />
+    <Content Include="Images\up_arrow_14.png" />
+    <Content Include="js\Mcsa5875.js" />
+    <Content Include="js\Activities.js" />
+    <Content Include="js\ActivityGridData.js" />
+    <Content Include="js\Companies.js" />
+    <Content Include="js\CompanyGridData.js" />
+    <Content Include="js\Consortiums.js" />
+    <Content Include="js\ConsortiumsGridData.js" />
+    <Content Include="js\Donor.js" />
+    <Content Include="js\DonorGridData.js" />
+    <Content Include="js\Imports.js" />
+    <Content Include="js\menu.js" />
+    <Content Include="js\MyOrganization.js" />
+    <Content Include="js\Personal.js" />
+    <Content Include="js\FieldKeys.js" />
+    <Content Include="js\GridView.js" />
+    <Content Include="js\lib.js" />
+    <Content Include="js\ModeCategory.js" />
+    <Content Include="js\MROReportDetailts.js" />
+    <Content Include="Handlers\Handler_GetMROReports.ashx" />
+    <Content Include="Handlers\Handler_SFTPDownload.ashx" />
+    <Content Include="Handlers\Handler_SignIn.ashx" />
+    <Content Include="Handlers\Handler_Authentication.ashx" />
+    <Content Include="Handlers\Handler_CreateCompany.ashx" />
+    <Content Include="Handlers\Handler_CreateDriver.ashx" />
+    <Content Include="Handlers\Handler_CreateOrder.ashx" />
+    <Content Include="Handlers\Handler_CreateUser.ashx" />
+    <Content Include="Handlers\Handler_Demo_XML.ashx" />
+    <Content Include="Handlers\Handler_GetFieldKey.ashx" />
+    <Content Include="Handlers\Handler_GetLocationTime.ashx" />
+    <Content Include="Handlers\Handler_GetUsers.ashx" />
+    <Content Include="Handlers\Handler_GetCompanies.ashx" />
+    <Content Include="DATA\StateCity.json" />
+    <Content Include="Handlers\Handler_GetStateCity.ashx" />
+    <Content Include="Handlers\Handler_GetDrivers.ashx" />
+    <Content Include="Handlers\Handler_CreateDonor.ashx" />
+    <Content Include="Handlers\Handler_GetDonor.ashx" />
+    <Content Include="Handlers\Handler_ModifyDonor.ashx" />
+    <Content Include="DATA\json.json" />
+    <Content Include="Handlers\Handler_GetDonorWorkAtCompanies.ashx" />
+    <Content Include="Handlers\Handler_GetTestResult.ashx" />
+    <Content Include="Handlers\Handler_CreateActivities.ashx" />
+    <Content Include="Handlers\Handler_GetActivities.ashx" />
+    <Content Include="Handlers\Handler_GetPersonal.ashx" />
+    <Content Include="Handlers\Handler_CreatePersonal.ashx" />
+    <Content Include="js\People.Changed.Copy.js" />
+    <Content Include="Handlers\Handler_ChangedCopyPersonal.ashx" />
+    <Content Include="Handlers\Handler_Imports.ashx" />
+    <Content Include="Handlers\Handler_GetImports.ashx" />
+    <Content Include="Handlers\Handler_GetConsortiums.ashx" />
+    <Content Include="Handlers\Handler_CreateConsortiums.ashx" />
+    <Content Include="DATA\Configurations.json" />
+    <Content Include="Handlers\Handler_CreateSchedules.ashx" />
+    <Content Include="Handlers\Handler_GetConfigurations.ashx" />
+    <Content Include="Handlers\Handler_GetSchedules.ashx" />
+    <Content Include="Handlers\Handler_GetPeople.ashx" />
+    <Content Include="Handlers\Handler_Upload.ashx" />
+    <Content Include="Handlers\Handler_GetRandomReports.ashx" />
+    <Content Include="Handlers\Handler_SendMail.ashx" />
+    <Content Include="DATA\Preferences.json" />
+    <Content Include="dist\sass\trumbowyg.scss" />
+    <Content Include="DATA\PreferencesOrg.json" />
+    <Content Include="Handlers\Handler_CreatedPreferences.ashx" />
+    <Content Include="Handlers\Handler_GetPreferences.ashx" />
+    <Content Include="Handlers\Handler_GetScheduleList.ashx" />
+    <Content Include="DATA\5875.json" />
+    <Content Include="DATA\5876.json" />
+    <Content Include="DATA\5875_en.json" />
+    <Content Include="DATA\5875_cn.json" />
+    <Content Include="Handlers\Handler_GetMCSA.ashx" />
+    <Content Include="DATA\5875_es.json" />
+    <Content Include="DATA\states_hash.json" />
+    <Content Include="Handlers\Handler_CreateExamNumber.ashx" />
+    <Content Include="Handlers\Handler_CheckPeople.ashx" />
+    <Content Include="Handlers\Handler_ModifyMcsa5875.ashx" />
+    <Content Include="Handlers\Handler_GetAge.ashx" />
+    <Content Include="Handlers\Handler_MCSA5875.ashx" />
+    <Content Include="Handlers\Handler_MCSA5875_LoadData.ashx" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="js\ScheduleGridData.js" />
+    <Content Include="js\ScheduleReport.js" />
+    <Content Include="js\Schedules.js" />
+    <Content Include="js\SelectionDonorGridData.js" />
+    <Content Include="js\SelectionGridData.js" />
+    <Content Include="js\SpecimentGridData.js" />
+    <Content Include="js\StateCity.js" />
+    <Content Include="js\User.js" />
+    <Content Include="js\WorkingAtGridData.js" />
+    <Content Include="Main.aspx" />
+    <Content Include="MCSA5875.aspx" />
+    <Content Include="menu.aspx" />
+    <Content Include="MROReports\Default.aspx" />
+    <Content Include="pdf.aspx" />
+    <Content Include="Personal\Default.aspx" />
+    <Content Include="Report\R1.aspx" />
+    <Content Include="Report\R2.aspx" />
+    <Content Include="Report\R3.aspx" />
+    <Content Include="Report\R5.aspx" />
+    <Content Include="ScheduleRandom.aspx" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <Content Include="SignIn.aspx" />
+    <Content Include="SignOut.aspx" />
+    <Content Include="Users\Default.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Company\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.aspx.cs">
+      <DependentUpon>Demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Demo.aspx.designer.cs">
+      <DependentUpon>Demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Donor\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Donor\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Exam.aspx.cs">
+      <DependentUpon>Exam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Exam.aspx.designer.cs">
+      <DependentUpon>Exam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Groups\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Groups\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_Authentication.ashx.cs">
+      <DependentUpon>Handler_Authentication.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_ChangedCopyPersonal.ashx.cs">
+      <DependentUpon>Handler_ChangedCopyPersonal.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_CheckPeople.ashx.cs">
+      <DependentUpon>Handler_CheckPeople.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_CreateActivities.ashx.cs">
+      <DependentUpon>Handler_CreateActivities.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_CreateCompany.ashx.cs">
+      <DependentUpon>Handler_CreateCompany.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_CreateConsortiums.ashx.cs">
+      <DependentUpon>Handler_CreateConsortiums.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_CreateDonor.ashx.cs">
+      <DependentUpon>Handler_CreateDonor.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_CreatedPreferences.ashx.cs">
+      <DependentUpon>Handler_CreatedPreferences.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_CreateDriver.ashx.cs">
+      <DependentUpon>Handler_CreateDriver.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_CreateExamNumber.ashx.cs">
+      <DependentUpon>Handler_CreateExamNumber.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_CreateOrder.ashx.cs">
+      <DependentUpon>Handler_CreateOrder.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_CreatePersonal.ashx.cs">
+      <DependentUpon>Handler_CreatePersonal.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_CreateSchedules.ashx.cs">
+      <DependentUpon>Handler_CreateSchedules.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_CreateUser.ashx.cs">
+      <DependentUpon>Handler_CreateUser.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_Demo_XML.ashx.cs">
+      <DependentUpon>Handler_Demo_XML.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetActivities.ashx.cs">
+      <DependentUpon>Handler_GetActivities.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetAge.ashx.cs">
+      <DependentUpon>Handler_GetAge.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetCompanies.ashx.cs">
+      <DependentUpon>Handler_GetCompanies.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetConfigurations.ashx.cs">
+      <DependentUpon>Handler_GetConfigurations.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetConsortiums.ashx.cs">
+      <DependentUpon>Handler_GetConsortiums.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetDonor.ashx.cs">
+      <DependentUpon>Handler_GetDonor.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetDonorWorkAtCompanies.ashx.cs">
+      <DependentUpon>Handler_GetDonorWorkAtCompanies.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetDrivers.ashx.cs">
+      <DependentUpon>Handler_GetDrivers.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetFieldKey.ashx.cs">
+      <DependentUpon>Handler_GetFieldKey.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetImports.ashx.cs">
+      <DependentUpon>Handler_GetImports.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetLocationTime.ashx.cs">
+      <DependentUpon>Handler_GetLocationTime.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetMCSA.ashx.cs">
+      <DependentUpon>Handler_GetMCSA.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetMROReports.ashx.cs">
+      <DependentUpon>Handler_GetMROReports.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetPeople.ashx.cs">
+      <DependentUpon>Handler_GetPeople.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetPersonal.ashx.cs">
+      <DependentUpon>Handler_GetPersonal.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetPreferences.ashx.cs">
+      <DependentUpon>Handler_GetPreferences.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetRandomReports.ashx.cs">
+      <DependentUpon>Handler_GetRandomReports.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetScheduleList.ashx.cs">
+      <DependentUpon>Handler_GetScheduleList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetSchedules.ashx.cs">
+      <DependentUpon>Handler_GetSchedules.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetStateCity.ashx.cs">
+      <DependentUpon>Handler_GetStateCity.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetTestResult.ashx.cs">
+      <DependentUpon>Handler_GetTestResult.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_GetUsers.ashx.cs">
+      <DependentUpon>Handler_GetUsers.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_Imports.ashx.cs">
+      <DependentUpon>Handler_Imports.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_MCSA5875_LoadData.ashx.cs">
+      <DependentUpon>Handler_MCSA5875_LoadData.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_ModifyDonor.ashx.cs">
+      <DependentUpon>Handler_ModifyDonor.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_ModifyMcsa5875.ashx.cs">
+      <DependentUpon>Handler_ModifyMcsa5875.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_SendMail.ashx.cs">
+      <DependentUpon>Handler_SendMail.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_SFTPDownload.ashx.cs">
+      <DependentUpon>Handler_SFTPDownload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_MCSA5875.ashx.cs">
+      <DependentUpon>Handler_MCSA5875.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_SignIn.ashx.cs">
+      <DependentUpon>Handler_SignIn.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_Upload.ashx.cs">
+      <DependentUpon>Handler_Upload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="html2Canvas.aspx.cs">
+      <DependentUpon>html2Canvas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="html2Canvas.aspx.designer.cs">
+      <DependentUpon>html2Canvas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MCSA5875.aspx.cs">
+      <DependentUpon>MCSA5875.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MCSA5875.aspx.designer.cs">
+      <DependentUpon>MCSA5875.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pdf.aspx.cs">
+      <DependentUpon>pdf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pdf.aspx.designer.cs">
+      <DependentUpon>pdf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personal\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\R1.aspx.cs">
+      <DependentUpon>R1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\R1.aspx.designer.cs">
+      <DependentUpon>R1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\R2.aspx.cs">
+      <DependentUpon>R2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\R2.aspx.designer.cs">
+      <DependentUpon>R2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\R3.aspx.cs">
+      <DependentUpon>R3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\R3.aspx.designer.cs">
+      <DependentUpon>R3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\R5.aspx.cs">
+      <DependentUpon>R5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\R5.aspx.designer.cs">
+      <DependentUpon>R5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleRandom.aspx.cs">
+      <DependentUpon>ScheduleRandom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScheduleRandom.aspx.designer.cs">
+      <DependentUpon>ScheduleRandom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignOut.aspx.cs">
+      <DependentUpon>SignOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignOut.aspx.designer.cs">
+      <DependentUpon>SignOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignIn.aspx.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignIn.aspx.designer.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_Demo.ashx.cs">
+      <DependentUpon>Handler_Demo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="MROReports\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MROReports\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\icon.xlsx" />
+    <Content Include="Handlers\Handler_Demo.ashx" />
+    <Content Include="DATA\sftp.json" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DATA\Company\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HTT\HTT.csproj">
+      <Project>{9470ba45-5c7a-4df4-aeab-254b05923ba6}</Project>
+      <Name>HTT</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>31548</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:31548/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

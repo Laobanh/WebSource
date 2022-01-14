@@ -1,0 +1,48 @@
+﻿.submit {
+    width:180px;
+    background-color:#64850f;
+    padding:10px;
+    text-align:center;
+    font-size:1.2em;
+    color:#fff;
+    border-radius:5px;
+    border:0;
+    margin:0;
+}
+
+
+.submit:hover {
+    background-color: #98c22d;
+    border-radius: 3px;
+    border: 0;
+    display: block;
+    cursor: pointer;
+}
+
+.ui-add {
+    width:48px;
+    height:48px;        
+    background:url("../images/ic_plus_240_01.png") center no-repeat;
+    background-size:cover;
+   
+}
+.ui-modify {
+    width:32px;
+    height:32px;        
+    background:url("../images/ic_edit_240_01.png") center no-repeat;
+    background-size:cover;
+    border:solid 1px #64850f;
+    border-radius:3px;
+   
+}
+
+.btn-save {
+    width: 100%;    
+    padding: 10px;   
+    text-align: center;
+    font-size: 1.2em;
+    background-color: #64850f;
+    /*border: solid 1px #98c22d;*/
+    border-radius: 5px;
+    color: #fff;
+}
