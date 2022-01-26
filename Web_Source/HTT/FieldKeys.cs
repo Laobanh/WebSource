@@ -12,7 +12,7 @@ namespace HTT
         public const String  PassKeyLID = "168168"; 
         public const String Cmd = "cmd", FilePath = "FilePath", FileName= "FileName";
         //class
-        public const String UserClass = "user", DriverClass = "driver", CompanyClass = "company", DonorClass = "donor", MroReports = "MroReports", PeopleClass = "People", Mcsa5875Class = "Mcsa5875";
+        public const String UserClass = "user", DriverClass = "driver", CompanyClass = "company", DonorClass = "donor", MroReports = "MroReports", PeopleClass = "People", Mcsa5875Class = "Mcsa5875", Mcsa5876Class = "Mcsa5876";
         public const String ConsortiumClass = "Consortium", ScheduleClass = "Schedules", ReportClass = "Reports", Exam = "Exam";
 
         public const String ID = "id", UserID = "userid", OldID = "oldid", NewID = "newid", OldName = "oldname", NewName = "Newname";

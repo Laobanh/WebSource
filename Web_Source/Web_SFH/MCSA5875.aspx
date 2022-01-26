@@ -272,8 +272,18 @@
                 return o;
             };
         })(jQuery);
-
+        function ValidateForm() {
+            var valid = true;
+            if ($("#txtExamNumber").val() == '') {
+                valid = false;
+            }
+            return valid;
+        }
         function Save() {
+            if (!ValidateForm()) {
+                alert("Please enter MEDICAL RECORD#");
+                return;
+            }
             var dataForm = $("#frmIndex").serializeFormJSON();
             ///Page2
             dataForm["DriverState"] = $("#selDriverState :selected").val();
@@ -287,6 +297,7 @@
             dataForm["MedicalState5"] = $("#selMedicalState5 :selected").val();
             dataForm["IssueState5"] = $("#selIssueState5 :selected").val();
             //End Page 5
+            dataForm["DriverAge"] = $("#txtAge").val();
 
             $.ajax({
                 type: 'POST',
@@ -294,8 +305,7 @@
                 data: dataForm,
                 success: function (data) {
                     var obj = JSON.parse(data);
-                    alert(obj.Message)
-
+                    alert(obj.Message);
                 },
                 error: function () {
                     error.html("Signin Failed.");
@@ -318,6 +328,7 @@
                 success: function (data) {
                     if (data == 'null') {
                         alert(String.format('Not found data with medical record {0}', id));
+                        ResetForm();
                         return;
                     }
                     const obj = JSON.parse(data);
@@ -331,7 +342,7 @@
                         if (type == 'checkbox') {
                             $('input[name="' + key + '"]').prop('checked', checked);
                         }
-                        else if (type == "text") {
+                        else if (type == "text" || type == "hidden") {
                             $('input[name="' + key + '"]').val(value);
                         }
                         else {
@@ -340,12 +351,11 @@
                                 $(`#sel${key} option[value=${value}]`).attr('selected', 'selected');
                             }
                         }
-                     
                     }
 
                 },
                 error: function (e) {
-                    error.html("Signin Failed.");
+                    error.html("Load data Failed.");
                 }
             });
         }
@@ -2141,6 +2151,7 @@ and attest that to the best of my knowledge, I believe it to be true and correct
         <div style="width:1000px; text-align:right; margin-top:5px;">
             <span>Page 5</span>
         </div>
+        <input type="hidden" name="Ids" />
     </div>
     </form>
  

@@ -291,25 +291,26 @@
                 return o;
             };
         })(jQuery);
-
+        function ValidateForm() {
+            var valid = true;
+            if ($("#txtExamNumber").val() == '') {
+                valid = false;
+            }
+            return valid;
+        }
         function Save() {
+            if (!ValidateForm()) {
+                alert("Please enter MEDICAL RECORD#");
+                return;
+            }
             var dataForm = $("#frmIndex").serializeFormJSON();
-            ///Page2
-            dataForm["DriverState"] = $("#selDriverState :selected").val();
-            ///EndPage2
-            ////End Page 1
-            //Page 4
-            dataForm["MedicalState4"] = $("#selMedicalState4 :selected").val();
-            dataForm["IssueState4"] = $("#selIssueState4 :selected").val();
-            //End Page 4
-            //Page 5
-            dataForm["MedicalState5"] = $("#selMedicalState5 :selected").val();
-            dataForm["IssueState5"] = $("#selIssueState5 :selected").val();
-            //End Page 5
+            dataForm["IssuingState"] = $("#slIssuingState :selected").val();
+            dataForm["IssuingStateProvince"] = $("#slIssuingStateProvince :selected").val();
+            dataForm["StateProvince"] = $("#slStateProvince :selected").val();
 
             $.ajax({
                 type: 'POST',
-                url: 'Handlers/Handler_MCSA5875.ashx',
+                url: 'Handlers/Handler_MCSA5876.ashx',
                 data: dataForm,
                 success: function (data) {
                     var obj = JSON.parse(data);
@@ -332,15 +333,15 @@
            
             $.ajax({
                 type: 'POST',
-                url: 'Handlers/Handler_MCSA5875_LoadData.ashx',
+                url: 'Handlers/Handler_MCSA5876_LoadData.ashx',
                 data: dataForm,
                 success: function (data) {
                     if (data == 'null') {
                         alert(String.format('Not found data with medical record {0}', id));
+                        ResetForm();
                         return;
                     }
                     const obj = JSON.parse(data);
-                    console.log(obj);
                     for (var key in obj) {
                         var type = $('input[name="' + key + '"]').attr('type');
                         var checked = obj[key] == "on" ? true : false;
@@ -355,8 +356,8 @@
                         }
                         else {
                             $('textarea[name="' + key + '"]').val(value);
-                            if (key == "IssueState4" || key == "MedicalState4" || key == "MedicalState5" || key == "IssueState5" || key=="DriverState") {
-                                $(`#sel${key} option[value=${value}]`).attr('selected', 'selected');
+                            if (key == "IssuingState" || key == "IssuingStateProvince" || key == "StateProvince") {
+                                $(`#sl${key} option[value=${value}]`).attr('selected', 'selected');
                             }
                         }
                      
@@ -364,7 +365,7 @@
 
                 },
                 error: function (e) {
-                    error.html("Signin Failed.");
+                    error.html("Load data failed.");
                 }
             });
         }
@@ -638,12 +639,32 @@
         <div class="logo">
             <img src="Images/5876_header.png" style="width:1000px; height:120px; text-align:center;" />
         </div>
-        <div style="margin:8px 0 3px 0;">
-            <span style="padding:3px 700px 3px 10px; font-size:7pt;"><b>Form MCSA-5876</b></span>
-            <span  style=" font-size:7pt;">OMB No. 2126-0006 Expiration Date: 12/31/2024</span>
-        </div>
+
+        <table style="width:1129px;">
+            <tbody><tr>
+                <td style="width:50%; padding-left:15px; vertical-align:bottom;">
+     
+                </td>
+                <td style="width:50%;">
+                    <div style="width:180px;border:solid 2px #dd898d; text-align:center; float:right; margin-right:20px;">
+                        <p>
+                            <b>
+                                MEDICAL RECORD # 
+                            </b>
+                        </p>
+                        <p>
+                            <input class="txt" name="examNumber" type="text" style="width:90%;" id="txtExamNumber"/>
+                        </p>
+                        <p style="font-size:1em;">
+                            (or sticker)
+                        </p>
+                    </div>
+                </td>
+            </tr>                
+        </tbody></table>
         <div style="border:solid 2px #ff0000;margin-left:13px; width:990px; padding:5px 0 2px 0;width:98%">
             <table>
+ 
                 <tr>
                     <td style="padding-left:8px;">
                         <h3 style="color:#bc131a; font-weight:bolder;">CMV DRIVER CERTIFICATION</h3>
@@ -804,13 +825,13 @@
                           </span>
                            <span style="position: relative;">
                                
-                               <span style="width: 196px;
+                               <span style="
                                 min-height: 28px;
-                                border: 0;
-                                border-bottom: solid 2px #808080;
                                 position: absolute;
                                 left: 5px;
-                                top: -18px;"></span>
+                                top: -8px;">
+                                  <input type="text" style="width:200px; border:0; border-bottom:solid 1px #808080;" name="OtherPractitioner"  />
+                               </span>
                            
                           </span>
                     </td>

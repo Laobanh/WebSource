@@ -13,5 +13,14 @@ namespace Web_SFH
 
     public partial class MCSA5875
     {
+
+        /// <summary>
+        /// frmIndex control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm frmIndex;
     }
 }

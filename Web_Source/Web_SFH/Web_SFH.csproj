@@ -381,6 +381,8 @@
     <Content Include="Handlers\Handler_GetAge.ashx" />
     <Content Include="Handlers\Handler_MCSA5875.ashx" />
     <Content Include="Handlers\Handler_MCSA5875_LoadData.ashx" />
+    <Content Include="Handlers\Handler_MCSA5876.ashx" />
+    <Content Include="Handlers\Handler_MCSA5876_LoadData.ashx" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="js\ScheduleGridData.js" />
@@ -562,6 +564,12 @@
     </Compile>
     <Compile Include="Handlers\Handler_Imports.ashx.cs">
       <DependentUpon>Handler_Imports.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_MCSA5876_LoadData.ashx.cs">
+      <DependentUpon>Handler_MCSA5876_LoadData.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Handler_MCSA5876.ashx.cs">
+      <DependentUpon>Handler_MCSA5876.ashx</DependentUpon>
     </Compile>
     <Compile Include="Handlers\Handler_MCSA5875_LoadData.ashx.cs">
       <DependentUpon>Handler_MCSA5875_LoadData.ashx</DependentUpon>

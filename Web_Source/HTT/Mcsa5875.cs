@@ -39,7 +39,7 @@ whisperLeft = ">5", right500 = "0", right1000 = "0", right2000 = "0", left500 = 
             otherQualifyState = "0", correctLensesState = "0", hearingAidState = "0", waiverQualifyState = "0", waiverEnterState = "0", speQualifyState = "0", grandQualifyState = "0", examSignatureState = "0",
 examNameState = "0", examDateState = "0", medicalAddressState = "0", medicalCityState = "0", medicalStateState = "0", medicalZipState = "0", medicalPhoneState = "0", certNumberState = "0", issueStateState = "0", mdState = "0", doState = "0",
 physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracState = "0", otherSpec = "0", nationalRegisterState = "0", expireDateState = "0";
-        private Guid Id = Guid.NewGuid();
+        private string Id = string.Empty;
         #endregion End Fields
 
         #region Constructors
@@ -350,7 +350,7 @@ physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracS
         public string NationalRegisterState { get => nationalRegisterState; set => nationalRegisterState = value; }
         public string ExpireDateState { get => expireDateState; set => expireDateState = value; }
         public int CompanyId { get => iCompanyId; set => iCompanyId = value; }
-        public Guid Ids { get => Id; set => Id = value; }
+        public string Ids { get => Id; set => Id = value; }
 
         // Page 3
         public string LastName3 { get; set; }
@@ -603,20 +603,41 @@ physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracS
         {
             try
             {
-                var js = JsonConvert.SerializeObject(mcsa);
-                js = StringEncryptDecrypt.Encrypt(js, FieldKeys.Mcsa5875Class);
+    
                 FilePath fp = new FilePath(FieldKeys.Mcsa5875Class);
-                //mcsa.Ids = Guid.NewGuid();
-                String folder = fp.Folder;
-
-                String fileName = folder + mcsa.Ids + ".json";
-
-                if (!Directory.Exists(folder))
+                Mcsa5875 mcsa5875 = Get(mcsa.MedNumber);
+                if(mcsa5875?.MedNumber?.Trim().ToLower() == mcsa.MedNumber?.Trim().ToLower())
                 {
-                    Directory.CreateDirectory(folder);
-                }
+                    mcsa.Ids = mcsa5875.Ids;
+                    mcsa5875 = mcsa;
+                    var js = JsonConvert.SerializeObject(mcsa5875);
 
-                Lib.WriteFileJson(ref error, fileName, js);
+                    js = StringEncryptDecrypt.Encrypt(js, FieldKeys.Mcsa5875Class);
+                    String folder = fp.Folder;
+                    String fileName = folder + mcsa.Ids + ".json";
+
+                    if (!Directory.Exists(folder))
+                    {
+                        Directory.CreateDirectory(folder);
+                    }
+
+                    Lib.WriteFileJson(ref error, fileName, js);
+                }
+                else
+                {
+                    mcsa.Ids = Guid.NewGuid().ToString();
+                    var js = JsonConvert.SerializeObject(mcsa);
+                    js = StringEncryptDecrypt.Encrypt(js, FieldKeys.Mcsa5875Class);
+                    String folder = fp.Folder;
+                    String fileName = folder + mcsa.Ids + ".json";
+
+                    if (!Directory.Exists(folder))
+                    {
+                        Directory.CreateDirectory(folder);
+                    }
+
+                    Lib.WriteFileJson(ref error, fileName, js);
+                }
             }
             catch (Exception ex)
             {
@@ -627,7 +648,6 @@ physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracS
 
         public string GetMcsaMedNumber(String medNumber)
         {
-            Mcsa5875 mcsa = new Mcsa5875();
             string id = string.Empty;
             try
             {
@@ -647,7 +667,7 @@ physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracS
                     js = StringEncryptDecrypt.Decrypt(js, FieldKeys.Mcsa5875Class);
                     if (js.Length > 0)
                     {
-                        mcsa = JsonConvert.DeserializeObject<Mcsa5875>(js);
+                        var mcsa = JsonConvert.DeserializeObject<Mcsa5875>(js);
                         if(mcsa != null)
                         {
                             if (mcsa.MedNumber.Equals(medNumber))
@@ -672,6 +692,7 @@ physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracS
         {
             var fp = new FilePath("MCSA5875");
             string ids = GetMcsaMedNumber(id);
+
             if(string.IsNullOrEmpty(ids))
             {
                 return null;
@@ -680,6 +701,7 @@ physAssistState = "0", chiroPractorState = "0", pracNurseState = "0", otherPracS
             var js = File.ReadAllText(path);
             js = StringEncryptDecrypt.Decrypt(js, FieldKeys.Mcsa5875Class);
             Mcsa5875 mcsa = JsonConvert.DeserializeObject<Mcsa5875>(js);
+            mcsa.Ids = ids;
             return mcsa;
         }
         #endregion End Methods
