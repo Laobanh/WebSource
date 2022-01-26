@@ -17,6 +17,7 @@
             onChangeLanguage();
             ShowPages();
             GetState();
+            GetStateFullName();
             var donorId = getUrlVars().DonorId;
             var id = getUrlVars().id;
             var lic = getUrlVars().lic;
@@ -86,19 +87,37 @@
             });
         }
 
+        function GetStateFullName() {
+            $.getJSON('data/states_hash.json', function (data) {
+                var str = "";
+                $.each(data,function (i, val) {
+                     var sel = "selected='selected'";
+                    str += "<option value='" + val + "' " + (val === 'CA' ? sel : '') + ">" + val + "</option>";
+                });
+                //Object.keys(data).map(function (v) {
+                    
+                //    var sel = "selected='selected'";
+                //    str += "<option value='" + v + "' " + (v === 'CA' ? sel : '') + ">" + v + "</option>";
+                //    //str += "<option value='" + v + "' " + ">" + v + "</option>";
+                //});
+
+                $('#slIssuingStateProvince').html(str);               
+                $('#slIssuingState').html(str);               
+
+            });
+        }
         function GetState() {
             $.getJSON('data/states_hash.json', function (data) {
                 var str = "";
+              
                 Object.keys(data).map(function (v) {
+
                     var sel = "selected='selected'";
                     str += "<option value='" + v + "' " + (v === 'CA' ? sel : '') + ">" + v + "</option>";
                     //str += "<option value='" + v + "' " + ">" + v + "</option>";
                 });
-                $('#selDriverState').html(str);
-                $('#selMedicalState4').html(str);
-                $('#selIssueState4').html(str);
-                 $('#selMedicalState5').html(str);
-                $('#selIssueState5').html(str);               
+
+                $('#slStateProvince').html(str);
 
             });
         }
@@ -593,6 +612,11 @@
                 font-weight:bolder;
                 cursor:pointer;
             }
+            .name-check
+            {
+                    position: relative;
+                    top: -3px;
+            }
     </style>
 </head>
 <body>  
@@ -722,38 +746,170 @@
                     <td style="padding-left:5px;">
                        <span style="font-weight:bold;">Medical Examiner’s Telephone Number</span>
                     </td>
+                     <td style="padding-left:5px;">
+                       <span style="font-weight:bold;">Date Certificate Signed</span>
+                    </td>
                 </tr>
                 <tr>
                   <td style="padding-left:8px;">
                    <span style="width:470px; min-height:28px; border:0; border-bottom:solid 2px #808080; float:left;"></span>
                   </td>
                     <td style="padding-left:5px;">
-                         <span><input id="ExaminerTelephone" type="text" class="txt" style="width:225px;" name="ExaminerTelephone"/></span>
+                         <span><input id="ExaminerTelephone" type="text" class="txt" style="width:290px;" name="ExaminerTelephone"/></span>
+                    </td>
+                     <td style="padding-left:5px;">
+                         <span><input id="DateCertificate" type="text" class="txt" style="width:290px;" name="DateCertificate"/></span>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding-left:8px;">
                         <span style="font-weight:bold">Medical Examiner’s Name </span>
                     </td>
+                    <td style="margin-left: 8px;" colspan="2">
+                          <span>
+                               <input type="radio" name="MedicalExaminerInfomation1" value="1" id="MD" />
+                               <span class="name-check">MD</span>
+                          </span>
+                          <span style="margin-left:20px">
+                               <input type="radio" name="MedicalExaminerInfomation1" value="2" id="PhysicianAssistant" />
+                               <span class="name-check">Physician Assistant</span>
+                          </span>
+
+                           <span style="margin-left:20px">
+                               <input type="radio" name="MedicalExaminerInfomation1" value="3" id="AdvancedPracticeNurse" />
+                               <span class="name-check">Advanced Practice Nurse</span>
+                          </span>
+                         
+                    </td>
+                    
                 </tr>
                 <tr>
                     <td style="padding-left:8px;">
                         <span><input id="ExaminerName" type="text" class="txt" style="width:470px;" name="ExaminerName"/></span>
+                    </td>
+                     <td style="margin-left: 8px;" colspan="2">
+                          <span>
+                               <input type="radio" name="MedicalExaminerInfomation2" value="1" id="DO" />
+                               <span class="name-check">DO</span>
+                          </span>
+                          <span style="margin-left:22px">
+                               <input type="radio" name="MedicalExaminerInfomation2" value="2" id="Chiropractor" />
+                               <span class="name-check">Chiropractor</span>
+                          </span>
+
+                           <span style="margin-left:55.1px">
+                               <input type="radio" name="MedicalExaminerInfomation2" value="3" id="OtherPractitioner" />
+                               <span class="name-check">Other Practitioner (specify)</span>
+                           
+                          </span>
+                           <span style="position: relative;">
+                               
+                               <span style="width: 196px;
+                                min-height: 28px;
+                                border: 0;
+                                border-bottom: solid 2px #808080;
+                                position: absolute;
+                                left: 5px;
+                                top: -18px;"></span>
+                           
+                          </span>
                     </td>
                 </tr>
                     <tr>
                     <td style="padding-left:8px;">
                         <span style="font-weight:bold">Medical Examiner’s State License, Certificate, or Registration Number </span>
                     </td>
+                         <td style="padding-left:8px;">
+                        <span style="font-weight:bold">Issuing State</span>
+                    </td>
+                         <td style="padding-left:8px;">
+                        <span style="font-weight:bold">National Registry Number</span>
+                    </td>
                 </tr>
                 <tr>
                     <td style="padding-left:8px;">
-                        <span><input id="ExaminerState" type="text" class="txt" style="width:470px;" name="ExaminerName"/></span>
+                        <span><input id="ExaminerState" type="text" class="txt" style="width:470px;" name="ExaminerState"/></span>
+                    </td>
+                     <td style="padding-left:8px;">
+                        <span>
+                            <select id="slIssuingState" style="width:288px;height: 27px;">
+                            </select>
+
+                        </span>
+                    </td>
+                     <td style="padding-left:8px;">
+                        <span>
+                            <input type="text" name="NationalRegistryNumber" class="txt" style="width:290px;"  id="NationalRegistryNumber"/>
+                        </span>
                     </td>
                 </tr>
             </table>
         </div>
-    
+      <div style="border:solid 2px #3f5ea7;margin:15px 0px 0px 13px; width:990px; padding:5px 0 2px 0;width:98%">
+            <table>
+                <tr>
+                     <td style="padding-left:8px;">
+                        <h3 style="color:#3f5ea7; font-weight:bolder;">CMV DRIVER INFORMATION</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:8px;">
+                        <span style="font-weight:bold">Driver’s Signature</span>
+                    </td>
+                    <td style="padding-left:5px;">
+                       <span style="font-weight:bold;">Driver’s License Number</span>
+                    </td>
+                     <td style="padding-left:5px;">
+                       <span style="font-weight:bold;">Issuing State/Province</span>
+                    </td>
+                </tr>
+                <tr>
+                      <td style="padding-left:8px;">
+                       <span style="width:470px; min-height:28px; border:0; border-bottom:solid 2px #808080; float:left;"></span>
+                      </td>
+                        <td style="padding-left:5px;">
+                             <span><input id="DriverLicenseNumber" type="text" class="txt" style="width:290px;" name="DriverLicenseNumber"/></span>
+                        </td>
+                         <td style="padding-left:5px;">
+                             <span>
+                                 <select id="slIssuingStateProvince" style="width: 294px;height: 27px;">
+                                   
+                                 </select>
+                              </span>
+                        </td>
+                </tr>
+               <tr>
+                    <td style="padding-left:8px;" colspan="2">
+                        <span style="font-weight:bold">Driver’s Address</span>
+                    </td>
+                     <td style="padding-left:5px;padding-left: 5px;position: absolute;right: 197px;width: 200px;">
+                       <span style="font-weight:bold;">CLP/CDL Applicant/Holder</span>
+                    </td>
+                </tr>
+                 <tr>
+                      <td style="padding-left:8px;" colspan="3">
+                       <span>Street Address:</span>
+                          <input id="StreetAddress" type="text" class="txt" style="width:350px;" name="StreetAddress"/>
+                          <span>City:</span>
+                          <input id="City" type="text" class="txt" style="width:160px;" name="City"/>
+                           <span>State/Province:</span>
+                          <select id="slStateProvince" style="width:45px">
+                             
+                          </select>
+                           <span>Zip Code:</span>
+                           <input id="ZipCode" type="text" class="txt" style="width:70px;" name="ZipCode"/>
+                         
+                      </td>
+                       
+                         <td style="position:absolute;right: 301px; width: 100px;padding: 5px 3px;">
+                             <span><input type="radio" name="CLPCDL" value="1" /></span>
+                             <span class="name-check">Yes</span>
+                             <span><input type="radio" name="CLPCDL" value="2"/></span>
+                              <span class="name-check">No</span>
+                        </td>
+                </tr>
+            </table>
+        </div>
     </div>
     </form>
  

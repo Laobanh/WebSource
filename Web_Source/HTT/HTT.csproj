@@ -101,6 +101,7 @@
     <Compile Include="FieldVaules.cs" />
     <Compile Include="FilePath.cs" />
     <Compile Include="Lib.cs" />
+    <Compile Include="Mcsa5876.cs" />
     <Compile Include="Mcsa5875.cs" />
     <Compile Include="MyOrganization.cs" />
     <Compile Include="PdfControl.cs" />
