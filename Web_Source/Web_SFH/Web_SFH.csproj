@@ -393,6 +393,7 @@
     <Content Include="js\User.js" />
     <Content Include="js\WorkingAtGridData.js" />
     <Content Include="Main.aspx" />
+    <Content Include="MCSA5876.aspx" />
     <Content Include="MCSA5875.aspx" />
     <Content Include="menu.aspx" />
     <Content Include="MROReports\Default.aspx" />
@@ -599,6 +600,13 @@
     </Compile>
     <Compile Include="Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MCSA5876.aspx.cs">
+      <DependentUpon>MCSA5876.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MCSA5876.aspx.designer.cs">
+      <DependentUpon>MCSA5876.aspx</DependentUpon>
     </Compile>
     <Compile Include="MCSA5875.aspx.cs">
       <DependentUpon>MCSA5875.aspx</DependentUpon>
