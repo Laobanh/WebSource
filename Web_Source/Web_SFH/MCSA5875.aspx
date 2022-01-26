@@ -1,6 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MCSA5875.aspx.cs" Inherits="Web_SFH.MCSA5875" %>
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <!DOCTYPE html>
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -29,7 +31,32 @@
             OnkeyOut();
 
             OnClickToolBar();
+     
         });
+
+        function printPdf() {
+            var HTML_Width = $("#frmIndex").width();
+            var HTML_Height = $("#frmIndex").height();
+            var top_left_margin = 15;
+            var PDF_Width = HTML_Width + (top_left_margin * 3);
+            var PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
+            var canvas_image_width = HTML_Width;
+            var canvas_image_height = HTML_Height;
+
+            var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
+
+            html2canvas($("#frmIndex")[0]).then(function (canvas) {
+                var imgData = canvas.toDataURL("image/jpeg", 1.0);
+                var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
+                pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
+                for (var i = 1; i <= totalPDFPages; i++) {
+                    pdf.addPage(PDF_Width, PDF_Height);
+                    pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height * i) + (top_left_margin * 4), canvas_image_width, canvas_image_height);
+                }
+                pdf.save("print.pdf");
+            });
+        }
+
 
         function onChangeLanguage() {
             $('#flag').find('p').on('click', function () {
@@ -164,6 +191,16 @@
             } 
         }
 
+        String.format = function () {
+            var s = arguments[0];
+            for (var i = 0; i < arguments.length - 1; i++) {
+                var reg = new RegExp("\\{" + i + "\\}", "gm");
+                s = s.replace(reg, arguments[i + 1]);
+            }
+
+            return s;
+        }
+
         function OnkeyOut() {
             $('div').find('input').focusout(function () {
                 var id = $(this).attr('id');
@@ -212,8 +249,9 @@
         }
 
         function ResetForm() {
-            $('#ctl01').find(':input').not(':button, :submit, :reset, :hidden, :checkbox, :radio').val('');
-            $('#ctl01').find(':checkbox, :radio').prop('checked', false);
+            $('html').find(':input').not(':button, :submit, :reset, :hidden, :checkbox, :radio').val('');
+            $('html').find(':checkbox, :radio').prop('checked', false);
+            GetState();
         }
 
         (function ($) {
@@ -238,7 +276,7 @@
         function Save() {
             var dataForm = $("#frmIndex").serializeFormJSON();
             ///Page2
-            dataForm["DriverState"] = $("#selStates1 :selected").val();
+            dataForm["DriverState"] = $("#selDriverState :selected").val();
             ///EndPage2
             ////End Page 1
             //Page 4
@@ -254,8 +292,9 @@
                 type: 'POST',
                 url: 'Handlers/Handler_MCSA5875.ashx',
                 data: dataForm,
-                success: function (msg) {
-                    alert(msg);
+                success: function (data) {
+                    var obj = JSON.parse(data);
+                    alert(obj.Message)
 
                 },
                 error: function () {
@@ -277,6 +316,10 @@
                 url: 'Handlers/Handler_MCSA5875_LoadData.ashx',
                 data: dataForm,
                 success: function (data) {
+                    if (data == 'null') {
+                        alert(String.format('Not found data with medical record {0}', id));
+                        return;
+                    }
                     const obj = JSON.parse(data);
                     console.log(obj);
                     for (var key in obj) {
@@ -569,6 +612,7 @@
         </div>
     </div>
     <div id="toolbar">
+        <p id="printPdf" onclick="printPdf();" >PDF</p>
         <p id="loadData">
             Load data
         </p>        

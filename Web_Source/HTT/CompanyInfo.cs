@@ -283,12 +283,29 @@ namespace HTT
                 {
 
                     companies = this.GetListCompanies(filePath);
+                    // check if name existed will be update
+                    if(companies.Any(x=>x.CompanyName.Trim() == com.CompanyName.Trim()))
+                    {
+                        for(int i = 0; i < companies.Count; i++)
+                        {
+                            if (companies[i].CompanyName.Trim().ToLower() == com.CompanyName.Trim().ToLower())
+                            {
+                                int companyId = companies[i].CompanyID;
+                                companies[i] = com;
+                                companies[i].CompanyID = companyId;
+                                break;
+                            }
+                        }
+                    }
+                    // create
+                    else
+                    {
+                        int count = companies.Count + 1 + classNumber;
 
-                    int count = companies.Count + 1 + classNumber;
+                        com.CompanyID = count;
 
-                    com.CompanyID = count;
-
-                    companies.Add(com);
+                        companies.Add(com);
+                    }
                 }
 
                 String data = JsonConvert.SerializeObject(companies);
